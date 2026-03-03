@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Florae - Gomitas de Balance Femenino</title>
+  <meta name="description" content="Contacta al equipo de soporte de Florae. Respondemos en 24-48 horas habiles. hola@florae.mx">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: "#1A2E1A",
+            blush: "#E8B4B8",
+            offwhite: "#FAFAF7",
+            card: "#F5F2ED",
+            muted: "#6B6B6B",
+            gold: "#C4A265",
+            sage: "#D4E4D1",
+          },
+          fontFamily: {
+            display: ["Cormorant Garamond", "Georgia", "serif"],
+            body: ["Inter", "system-ui", "sans-serif"],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; background: #FAFAF7; color: #1A2E1A; }
+    #main-header { position: sticky; top: 0; z-index: 900; background: rgba(250,250,247,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(26,46,26,0.08); transition: all 0.3s ease; }
+    #main-header.scrolled { background: rgba(250,250,247,0.96); box-shadow: 0 2px 20px rgba(26,46,26,0.08); }
+    .section-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #C4A265; font-weight: 600; font-family: "Inter", sans-serif; }
+  </style>
+</head>
+<body class="bg-offwhite font-body">
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="index.html" class="font-display text-2xl font-light tracking-wide text-forest no-underline">Florae</a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-forest/80">
+      <a href="index.html#como-funciona" class="hover:text-forest transition-colors">Como funciona</a>
+      <a href="index.html#ingredientes" class="hover:text-forest transition-colors">Ingredientes</a>
+      <a href="index.html#resenas" class="hover:text-forest transition-colors">Resenas</a>
+      <a href="index.html#faq" class="hover:text-forest transition-colors">Preguntas</a>
+    </nav>
+    <a href="index.html#comprar" class="bg-forest text-offwhite text-sm font-medium px-5 py-2.5 rounded-full hover:bg-forest/90 transition-colors">Comprar Ahora</a>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="max-w-6xl mx-auto px-5 py-4">
+  <nav class="text-sm text-muted">
+    <a href="index.html" class="hover:text-forest transition-colors">Inicio</a>
+    <span class="mx-2">/</span>
+    <span class="text-forest font-medium">Contacto</span>
+  </nav>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-6xl mx-auto px-5 pb-20">
+  <!-- Page Header -->
+  <div class="text-center mb-14 pt-6">
+    <p class="section-eyebrow mb-3">Estamos para ayudarte</p>
+    <h1 class="font-display text-4xl md:text-5xl font-light text-forest mb-4">Contactanos</h1>
+    <p class="text-muted text-lg max-w-lg mx-auto">Nuestro equipo responde todos los mensajes en un maximo de 48 horas habiles. Escríbenos y te ayudamos con lo que necesites.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8 mb-16">
+    <!-- Info Cards -->
+    <div class="bg-card rounded-2xl p-7 text-center">
+      <div class="w-14 h-14 bg-sage rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">&#9993;</div>
+      <h3 class="font-display text-xl font-medium text-forest mb-2">Email</h3>
+      <a href="mailto:hola@florae.mx" class="text-gold font-medium hover:underline">hola@florae.mx</a>
+      <p class="text-muted text-sm mt-2">La forma mas rapida de contactarnos</p>
+    </div>
+    <div class="bg-card rounded-2xl p-7 text-center">
+      <div class="w-14 h-14 bg-sage rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">&#9202;</div>
+      <h3 class="font-display text-xl font-medium text-forest mb-2">Tiempo de respuesta</h3>
+      <p class="text-forest font-semibold text-lg">24-48 hrs habiles</p>
+      <p class="text-muted text-sm mt-2">Maximo 2 dias habiles para cualquier consulta</p>
+    </div>
+    <div class="bg-card rounded-2xl p-7 text-center">
+      <div class="w-14 h-14 bg-sage rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">&#128197;</div>
+      <h3 class="font-display text-xl font-medium text-forest mb-2">Horario de atencion</h3>
+      <p class="text-forest font-semibold">Lunes a Viernes</p>
+      <p class="text-muted text-sm mt-1">9:00 am - 6:00 pm (CST)</p>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="max-w-2xl mx-auto">
+    <div class="bg-card rounded-2xl p-8 md:p-10">
+      <h2 class="font-display text-2xl md:text-3xl font-light text-forest mb-2">Envíanos un mensaje</h2>
+      <p class="text-muted text-sm mb-8">Completa el formulario y te responderemos lo antes posible.</p>
+      <form action="#" method="POST" class="space-y-5">
+        <div>
+          <label for="nombre" class="block text-sm font-medium text-forest mb-1.5">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" class="w-full px-4 py-3 rounded-xl border border-forest/15 bg-offwhite text-forest text-sm focus:outline-none focus:border-forest/40 focus:ring-1 focus:ring-forest/20 transition-colors">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-forest mb-1.5">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tu@email.com" class="w-full px-4 py-3 rounded-xl border border-forest/15 bg-offwhite text-forest text-sm focus:outline-none focus:border-forest/40 focus:ring-1 focus:ring-forest/20 transition-colors">
+        </div>
+        <div>
+          <label for="pedido" class="block text-sm font-medium text-forest mb-1.5">Numero de pedido <span class="text-muted font-normal">(opcional)</span></label>
+          <input type="text" id="pedido" name="pedido" placeholder="Ej: #FLR-12345" class="w-full px-4 py-3 rounded-xl border border-forest/15 bg-offwhite text-forest text-sm focus:outline-none focus:border-forest/40 focus:ring-1 focus:ring-forest/20 transition-colors">
+        </div>
+        <div>
+          <label for="mensaje" class="block text-sm font-medium text-forest mb-1.5">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required rows="5" placeholder="Cuentanos en que podemos ayudarte..." class="w-full px-4 py-3 rounded-xl border border-forest/15 bg-offwhite text-forest text-sm focus:outline-none focus:border-forest/40 focus:ring-1 focus:ring-forest/20 transition-colors resize-vertical"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-forest text-offwhite font-semibold py-3.5 rounded-full hover:bg-forest/90 transition-colors text-sm">Enviar Mensaje</button>
+      </form>
+    </div>
+
+    <!-- Additional Note -->
+    <div class="text-center mt-10">
+      <p class="text-muted text-sm">Para consultas sobre pedidos existentes, incluye tu numero de pedido para una respuesta mas rapida.</p>
+      <p class="text-muted text-xs mt-3">Actualmente solo ofrecemos atencion por email. No contamos con linea telefonica.</p>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-forest text-offwhite/70 py-16">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-2">
+        <div class="font-display text-3xl font-light text-offwhite mb-3">Florae</div>
+        <p class="text-sm leading-relaxed mb-4 max-w-xs">El Protocolo de Recolonizacion Vaginal. Lactobacillus GR1 + RC14 + Extracto de Pina Hawaiana. Hecho para mujeres que ya lo intentaron todo.</p>
+        <p class="text-xs text-offwhite/40 leading-relaxed max-w-xs">* Estos statements no han sido evaluados por la FDA. Este producto no esta disenado para diagnosticar, tratar, curar o prevenir ninguna enfermedad.</p>
+      </div>
+      <div>
+        <h4 class="text-offwhite font-medium mb-4 text-sm">Producto</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html#como-funciona" class="hover:text-offwhite transition-colors">Como funciona</a></li>
+          <li><a href="index.html#ingredientes" class="hover:text-offwhite transition-colors">Ingredientes</a></li>
+          <li><a href="index.html#resenas" class="hover:text-offwhite transition-colors">Resenas</a></li>
+          <li><a href="index.html#faq" class="hover:text-offwhite transition-colors">Preguntas frecuentes</a></li>
+          <li><a href="index.html#comprar" class="hover:text-offwhite transition-colors">Comprar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-offwhite font-medium mb-4 text-sm">Soporte</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="contacto.html" class="hover:text-offwhite transition-colors">Contacto</a></li>
+          <li><a href="envios.html" class="hover:text-offwhite transition-colors">Envios y entregas</a></li>
+          <li><a href="devoluciones.html" class="hover:text-offwhite transition-colors">Devoluciones</a></li>
+          <li><a href="privacidad.html" class="hover:text-offwhite transition-colors">Privacidad</a></li>
+          <li><a href="terminos.html" class="hover:text-offwhite transition-colors">Terminos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-offwhite/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs">&copy; 2026 Florae. Todos los derechos reservados. Mexico.</p>
+      <div class="flex gap-4 items-center">
+        <div class="bg-offwhite/10 px-3 py-1 rounded text-xs font-medium">OXXO Pay</div>
+        <div class="bg-offwhite/10 px-3 py-1 rounded text-xs font-medium">SPEI</div>
+        <div class="bg-offwhite/10 px-3 py-1 rounded text-xs font-medium">Visa</div>
+        <div class="bg-offwhite/10 px-3 py-1 rounded text-xs font-medium">Mastercard</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener("scroll", function() {
+    document.getElementById("main-header").classList.toggle("scrolled", window.scrollY > 20);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florae — Gomitas Premium de Balance Femenino</title>
+  <meta name="description" content="Cepas clínicamente estudiadas Lactobacillus GR1 y RC14 para frescura duradera, armonía de pH y soporte de flora vaginal. Sabor Piña Tropical. Garantía de 30 días." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#1A2E1A',
+            'forest-hover': '#2A3E2A',
+            blush: '#F4C2C2',
+            cream: '#F5E6C8',
+            'soft-bg': '#FFF5F5',
+            'card-bg': '#FDE8E8',
+            sage: '#E8F0E8',
+            'text-dark': '#1A2E1A',
+            'text-muted': '#8B6B6B',
+            gold: '#D4A017',
+            coral: '#E85D3A',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: {
+            'display': '-0.03em',
+            'brand': '0.12em',
+          },
+          lineHeight: {
+            'body': '1.7',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --color-primary: #1A2E1A;
+      --color-primary-hover: #2A3E2A;
+      --color-blush: #F4C2C2;
+      --color-cream: #F5E6C8;
+      --color-soft-bg: #FFF5F5;
+      --color-card-bg: #FDE8E8;
+      --color-sage: #E8F0E8;
+      --color-text: #1A2E1A;
+      --color-muted: #8B6B6B;
+      --color-gold: #D4A017;
+      --color-coral: #E85D3A;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background-color: var(--color-soft-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: -0.03em;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 13px;
+      transition: background-color 0.2s, transform 0.1s, opacity 0.2s;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+    }
+    .btn-primary:hover { background-color: var(--color-primary-hover); }
+    .btn-primary:active { transform: translateY(1px); }
+
+    .bundle-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 2px solid #e8d5d5;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.2s, background-color 0.2s;
+      background: #fff;
+      margin-bottom: 8px;
+    }
+    .bundle-option.selected {
+      border-color: var(--color-primary);
+      background-color: #f0f5f0;
+    }
+    .bundle-option input[type="radio"] {
+      accent-color: var(--color-primary);
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .faq-item { border-bottom: 1px solid #e8d5d5; }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--color-text);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 0 18px;
+      color: var(--color-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .faq-answer.open { display: block; }
+    .faq-icon { transition: transform 0.2s; font-size: 18px; color: var(--color-muted); }
+    .faq-icon.rotated { transform: rotate(45deg); }
+
+    .review-carousel-track {
+      display: flex;
+      gap: 16px;
+      transition: transform 0.3s ease;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      min-width: 300px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(26,46,26,0.08);
+    }
+
+    .stars { color: var(--color-gold); }
+
+    #sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-primary);
+      color: #fff;
+      z-index: 1000;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      padding: 8px 16px;
+    }
+    #sticky-cta.visible { transform: translateY(0); }
+
+    .announcement-msg { display: none; }
+    .announcement-msg.active { display: flex; }
+
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--color-soft-bg);
+      z-index: 999;
+      flex-direction: column;
+      padding: 80px 32px 32px;
+    }
+    #mobile-menu.open { display: flex; }
+
+    .thumb-active { border-color: #1A2E1A !important; opacity: 1 !important; }
+
+    .product-placeholder {
+      background: linear-gradient(135deg, #F4C2C2 0%, #FDE8E8 50%, #E8F0E8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--color-muted);
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    .product-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 2px dashed rgba(139,107,107,0.25);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .ugc-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .ugc-scroll::-webkit-scrollbar { display: none; }
+
+    .press-logo {
+      opacity: 0.5;
+      filter: grayscale(100%);
+      transition: opacity 0.2s;
+    }
+    .press-logo:hover { opacity: 0.8; }
+
+    .gallery-panel { display: none; }
+    .gallery-panel.active { display: block; }
+
+    /* Dynamic reviews */
+    .review-grid-item {
+      background: var(--color-soft-bg);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(244,194,194,0.3);
+    }
+    .stars-small { color: var(--color-gold); font-size: 12px; }
+    .rating-bar { height: 8px; border-radius: 4px; background: #e8d5d5; overflow: hidden; }
+    .rating-bar-fill { height: 100%; border-radius: 4px; background: var(--color-gold); }
+
+    /* UGC auto-scroll animation */
+    @keyframes ugc-marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ugc-scroll-auto {
+      display: flex;
+      gap: 12px;
+      animation: ugc-marquee 25s linear infinite;
+      width: max-content;
+    }
+    .ugc-scroll-auto:hover { animation-play-state: paused; }
+
+    @media (max-width: 768px) {
+      .review-card { min-width: 260px; }
+    }
+
+    /* Mobile sizing fixes */
+    @media (max-width: 480px) {
+      .gallery-panel, .gallery-panel .product-placeholder { min-height: 300px !important; }
+      #sticky-cta { padding: 6px 12px; }
+      .review-grid-item { padding: 16px; }
+    }
+  </style>
+</head>
+<body class="bg-soft-bg">
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="announcement-bar" class="bg-forest text-white text-sm overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="announcement-msg active items-center justify-center gap-4 py-2.5 text-center">
+      <span>&#128666; Env&iacute;o gratis en pedidos de $899+ &nbsp;|&nbsp;</span>
+      <span id="timer-display" class="font-semibold">Cargando...</span>
+      <span>&nbsp;para la oferta de hoy</span>
+    </div>
+    <div class="announcement-msg items-center justify-center gap-2 py-2.5 text-center">
+      <span>&#127800; OFERTA DE LANZAMIENTO &mdash; Ahorra hasta 33% en el Pack de 3</span>
+    </div>
+    <div class="announcement-msg items-center justify-center gap-2 py-2.5 text-center">
+      <span>&#11088; Garant&iacute;a de 30 d&iacute;as &nbsp;|&nbsp; Certificado GMP &nbsp;|&nbsp; Pago contra entrega</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="bg-soft-bg border-b border-blush/50 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <button id="menu-toggle" class="p-2 text-forest hover:opacity-70 transition-opacity" aria-label="Men&uacute;">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+        <rect y="0" width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="7" width="16" height="2" rx="1" fill="currentColor"/>
+        <rect y="14" width="22" height="2" rx="1" fill="currentColor"/>
+      </svg>
+    </button>
+    <a href="index.html" class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+      <span class="font-display text-forest font-bold tracking-brand text-base uppercase leading-none">Florae</span>
+    </a>
+    <button class="p-2 text-forest hover:opacity-70 transition-opacity relative" aria-label="Carrito">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="absolute top-1 right-1 bg-coral text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav id="mobile-menu" aria-label="Navegaci&oacute;n m&oacute;vil">
+  <button id="menu-close" class="absolute top-5 right-5 p-2 text-forest text-2xl" aria-label="Cerrar men&uacute;">&#10005;</button>
+  <a href="index.html" class="font-body text-forest text-xl font-semibold py-4 border-b border-blush/50">Tienda</a>
+  <a href="#full-faq" class="font-body text-forest text-xl py-4 border-b border-blush/50">Preguntas Frecuentes</a>
+  <a href="envios.html" class="font-body text-forest text-xl py-4 border-b border-blush/50">Env&iacute;os</a>
+  <a href="devoluciones.html" class="font-body text-forest text-xl py-4 border-b border-blush/50">Devoluciones</a>
+  <a href="contacto.html" class="font-body text-forest text-xl py-4">Contacto</a>
+</nav>
+
+<!-- HERO — PRODUCT SECTION (split layout) -->
+<section class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+  <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+
+    <!-- LEFT: Image Gallery -->
+    <div class="md:w-[55%]">
+      <!-- Gallery panels -->
+      <div id="panel-placeholder" class="gallery-panel active rounded-2xl overflow-hidden aspect-square md:aspect-[4/5]" style="min-height: 400px;">
+        <div class="product-placeholder w-full h-full rounded-2xl" style="min-height:400px;">
+          <div>
+            <div class="text-3xl mb-2">&#127800;</div>
+            <p class="font-semibold text-forest text-base mb-1">Foto del producto</p>
+            <p class="text-xs">Gomitas Balance Femenino &mdash; Florae</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-ingredients" class="gallery-panel rounded-2xl overflow-hidden" style="min-height: 400px;">
+        <div class="product-placeholder w-full h-full rounded-2xl" style="min-height:400px;">
+          <div>
+            <div class="text-3xl mb-2">&#129514;</div>
+            <p class="font-semibold text-forest text-base mb-1">Foto de ingredientes</p>
+            <p class="text-xs">Flatlay de ingredientes naturales</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-lifestyle" class="gallery-panel rounded-2xl overflow-hidden" style="min-height: 400px;">
+        <div class="product-placeholder w-full h-full rounded-2xl" style="min-height:400px;">
+          <div>
+            <div class="text-3xl mb-2">&#128105;</div>
+            <p class="font-semibold text-forest text-base mb-1">Foto lifestyle</p>
+            <p class="text-xs">Mujer disfrutando las gomitas</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-ugc1" class="gallery-panel rounded-2xl overflow-hidden" style="min-height: 400px;">
+        <div class="product-placeholder w-full h-full rounded-2xl" style="min-height:400px;">
+          <div>
+            <div class="text-3xl mb-2">&#128248;</div>
+            <p class="font-semibold text-forest text-base mb-1">Foto de clienta 1</p>
+            <p class="text-xs">Rese&ntilde;a con foto real</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-ugc2" class="gallery-panel rounded-2xl overflow-hidden" style="min-height: 400px;">
+        <div class="product-placeholder w-full h-full rounded-2xl" style="min-height:400px;">
+          <div>
+            <div class="text-3xl mb-2">&#128248;</div>
+            <p class="font-semibold text-forest text-base mb-1">Foto de clienta 2</p>
+            <p class="text-xs">Rese&ntilde;a con foto real</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="flex gap-3 mt-3 overflow-x-auto pb-1">
+        <button onclick="showPanel('placeholder', this)" class="thumb-btn w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 border-forest flex-shrink-0 thumb-active product-placeholder" aria-label="Foto del producto" style="padding:4px;font-size:10px;">
+          &#127800;
+        </button>
+        <button onclick="showPanel('ingredients', this)" class="thumb-btn w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 border-transparent flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity product-placeholder" aria-label="Ingredientes" style="padding:4px;font-size:10px;">
+          &#129514;
+        </button>
+        <button onclick="showPanel('lifestyle', this)" class="thumb-btn w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 border-transparent flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity product-placeholder" aria-label="Lifestyle" style="padding:4px;font-size:10px;">
+          &#128105;
+        </button>
+        <button onclick="showPanel('ugc1', this)" class="thumb-btn w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 border-transparent flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity product-placeholder" aria-label="Clienta 1" style="padding:4px;font-size:10px;">
+          &#128248;
+        </button>
+        <button onclick="showPanel('ugc2', this)" class="thumb-btn w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 border-transparent flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity product-placeholder" aria-label="Clienta 2" style="padding:4px;font-size:10px;">
+          &#128248;
+        </button>
+      </div>
+
+      <!-- Key stats strip -->
+      <div class="mt-4 grid grid-cols-4 gap-2">
+        <div class="bg-card-bg rounded-xl p-3 text-center">
+          <div class="font-display text-forest text-lg font-bold">93%</div>
+          <div class="font-body text-text-muted text-[10px] leading-tight mt-1">se sinti&oacute; en balance</div>
+        </div>
+        <div class="bg-card-bg rounded-xl p-3 text-center">
+          <div class="font-display text-forest text-lg font-bold">89%</div>
+          <div class="font-body text-text-muted text-[10px] leading-tight mt-1">sin mal olor vaginal</div>
+        </div>
+        <div class="bg-card-bg rounded-xl p-3 text-center">
+          <div class="font-display text-forest text-lg font-bold">91%</div>
+          <div class="font-body text-text-muted text-[10px] leading-tight mt-1">malestar eliminado</div>
+        </div>
+        <div class="bg-card-bg rounded-xl p-3 text-center">
+          <div class="font-display text-forest text-lg font-bold">95%</div>
+          <div class="font-body text-text-muted text-[10px] leading-tight mt-1">pH mejorado</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Product Info -->
+    <div class="md:w-[45%]" id="buy-box">
+      <!-- Benefit tags -->
+      <div class="flex gap-2 flex-wrap mb-4">
+        <span class="bg-sage text-forest text-xs font-semibold px-3 py-1 rounded-full font-body">Armon&iacute;a pH</span>
+        <span class="bg-sage text-forest text-xs font-semibold px-3 py-1 rounded-full font-body">Flora Vaginal</span>
+        <span class="bg-sage text-forest text-xs font-semibold px-3 py-1 rounded-full font-body">Defensa VB</span>
+        <span class="bg-sage text-forest text-xs font-semibold px-3 py-1 rounded-full font-body">Salud Intestinal</span>
+        <span class="bg-sage text-forest text-xs font-semibold px-3 py-1 rounded-full font-body">Balance de Olor</span>
+      </div>
+
+      <!-- Rating -->
+      <div class="flex items-center gap-2 mb-3">
+        <span class="stars text-base">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="font-body text-sm text-text-muted">4.8/5</span>
+        <a href="#all-reviews" class="font-body text-sm text-forest underline underline-offset-2">2,847 rese&ntilde;as verificadas</a>
+      </div>
+
+      <!-- H1 -->
+      <h1 class="font-display text-3xl md:text-4xl text-forest leading-tight mb-2">
+        Gomitas Premium de<br />Balance Femenino
+      </h1>
+      <p class="font-body text-text-muted text-sm mb-2">
+        Cepas cl&iacute;nicamente estudiadas para frescura duradera y armon&iacute;a de pH &middot; Sabor Pi&ntilde;a Tropical
+      </p>
+      <p class="font-body text-xs text-text-muted mb-5">60 Gomitas | 30 Porciones</p>
+
+      <!-- Bullet benefits -->
+      <ul class="space-y-2.5 mb-6">
+        <li class="flex items-start gap-2.5">
+          <span class="text-coral mt-0.5 flex-shrink-0 font-bold">&#10003;</span>
+          <span class="font-body text-sm text-text-dark">Restaura el pH vaginal al rango protector <strong>3.8&ndash;4.5</strong> con las cepas cl&iacute;nicamente estudiadas GR1 y RC14</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-coral mt-0.5 flex-shrink-0 font-bold">&#10003;</span>
+          <span class="font-body text-sm text-text-dark">Combate la <strong>VB y candidiasis recurrente</strong> recolonizando Lactobacillus desde adentro hacia afuera</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-coral mt-0.5 flex-shrink-0 font-bold">&#10003;</span>
+          <span class="font-body text-sm text-text-dark">Promueve <strong>hidrataci&oacute;n y frescura natural</strong> con extracto de Pi&ntilde;a Tropical</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-coral mt-0.5 flex-shrink-0 font-bold">&#10003;</span>
+          <span class="font-body text-sm text-text-dark">Sin az&uacute;car, veganas, sin gluten &mdash; endulzadas con fruto del monje</span>
+        </li>
+      </ul>
+
+      <!-- Bundle selector -->
+      <p class="font-body text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">Elige Tu Suministro</p>
+
+      <label class="bundle-option" id="bundle-1">
+        <input type="radio" name="bundle" value="1" onchange="selectBundle(1)" />
+        <div class="flex-1">
+          <div class="font-body text-sm font-semibold text-forest">1 Pack &mdash; 1 Mes</div>
+          <div class="font-body text-xs text-text-muted">60 gomitas &middot; 30 porciones</div>
+        </div>
+        <div class="text-right">
+          <div class="font-body text-sm font-bold text-forest">$549</div>
+          <div class="font-body text-xs text-text-muted line-through">$799</div>
+        </div>
+      </label>
+
+      <label class="bundle-option" id="bundle-2">
+        <input type="radio" name="bundle" value="2" onchange="selectBundle(2)" />
+        <div class="flex-1">
+          <div class="font-body text-sm font-semibold text-forest flex items-center gap-2 flex-wrap">
+            2 Packs &mdash; 2 Meses
+            <span class="bg-blush text-forest text-[10px] font-bold px-2 py-0.5 rounded-full">ENV&Iacute;O GRATIS</span>
+          </div>
+          <div class="font-body text-xs text-text-muted">120 gomitas &middot; 60 porciones</div>
+        </div>
+        <div class="text-right">
+          <div class="font-body text-sm font-bold text-forest">$899</div>
+          <div class="font-body text-xs text-text-muted line-through">$1,598</div>
+        </div>
+      </label>
+
+      <label class="bundle-option selected" id="bundle-3">
+        <input type="radio" name="bundle" value="3" checked onchange="selectBundle(3)" />
+        <div class="flex-1">
+          <div class="font-body text-sm font-semibold text-forest flex items-center gap-2 flex-wrap">
+            3 Packs &mdash; 3 Meses
+            <span class="bg-forest text-cream text-[10px] font-bold px-2 py-0.5 rounded-full">M&Aacute;S POPULAR</span>
+            <span class="bg-blush text-forest text-[10px] font-bold px-2 py-0.5 rounded-full">ENV&Iacute;O GRATIS</span>
+          </div>
+          <div class="font-body text-xs text-text-muted">180 gomitas &middot; 90 porciones &middot; Mejor valor</div>
+        </div>
+        <div class="text-right">
+          <div class="font-body text-sm font-bold text-forest">$1,149</div>
+          <div class="font-body text-xs text-text-muted line-through">$2,397</div>
+        </div>
+      </label>
+
+      <!-- Bonuses pre-CTA -->
+      <div class="bg-cream/50 rounded-xl p-4 mb-5 border border-cream mt-4">
+        <p class="font-body text-xs font-semibold text-forest uppercase tracking-wider mb-2">Tambi&eacute;n recibes GRATIS:</p>
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="font-body text-xs text-text-dark flex items-center gap-1.5"><span class="text-coral">&#10003;</span> Gu&iacute;a PDF: Protocolo de Recolonizaci&oacute;n Vaginal</span>
+            <span class="font-body text-xs"><span class="line-through text-text-muted">$299</span> <span class="text-coral font-bold">GRATIS</span></span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-body text-xs text-text-dark flex items-center gap-1.5"><span class="text-coral">&#10003;</span> Plan de Alimentaci&oacute;n Anti-VB de 7 D&iacute;as</span>
+            <span class="font-body text-xs"><span class="line-through text-text-muted">$199</span> <span class="text-coral font-bold">GRATIS</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <button class="btn-primary text-base py-4 mb-4" onclick="window.location.href='#buy-box'">
+        Comenzar Mi Protocolo de Recolonizaci&oacute;n &#8594;
+      </button>
+
+      <!-- Trust strip -->
+      <div class="flex items-center justify-center gap-4 flex-wrap mb-4">
+        <span class="font-body text-xs text-text-muted">&#10003; 2,847+ vendidos</span>
+        <span class="font-body text-xs text-text-muted">&#10003; Garant&iacute;a 30 d&iacute;as</span>
+        <span class="font-body text-xs text-text-muted">&#10003; GMP Certificado</span>
+      </div>
+
+      <!-- Delivery -->
+      <div class="bg-sage rounded-xl p-3 text-center mb-4">
+        <p class="font-body text-xs text-forest">
+          &#128666; Pide hoy &mdash; entrega estimada <strong id="delivery-date">calculando...</strong>
+        </p>
+      </div>
+
+      <!-- Mini-FAQ below CTA -->
+      <div class="border-t border-blush/50 pt-4">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question text-sm">&iquest;Qu&eacute; las hace diferentes? <span class="faq-icon">+</span></div>
+          <div class="faq-answer text-xs">A diferencia de los probi&oacute;ticos gen&eacute;ricos, nuestras gomitas contienen Lactobacillus rhamnosus GR1 y Lactobacillus reuteri RC14 &mdash; las dos cepas m&aacute;s estudiadas cl&iacute;nicamente espec&iacute;ficamente para salud vaginal. Estas cepas migran desde tu intestino a tu tracto vaginal, recolonizan tu flora y producen &aacute;cido l&aacute;ctico para mantener el pH en el rango protector 3.8&ndash;4.5.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question text-sm">&iquest;Qu&eacute; tan r&aacute;pido ver&eacute; resultados? <span class="faq-icon">+</span></div>
+          <div class="faq-answer text-xs">La mayor&iacute;a de las mujeres notan mejora en frescura y comodidad en 2&ndash;3 semanas. La recolonizaci&oacute;n completa de flora vaginal t&iacute;picamente toma 4&ndash;8 semanas de uso diario consistente. El formato en gomita existe espec&iacute;ficamente para que la consistencia diaria sea un placer, no una obligaci&oacute;n.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question text-sm">&iquest;Cu&aacute;nto producto recibo? <span class="faq-icon">+</span></div>
+          <div class="faq-answer text-xs">Cada pack contiene 60 gomitas &mdash; suministro para 30 d&iacute;as a 2 gomitas diarias. El pack de 3 (el m&aacute;s popular) te da un protocolo completo de 90 d&iacute;as, la duraci&oacute;n recomendada para una recolonizaci&oacute;n duradera de flora.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question text-sm">&iquest;Y si no me funciona? <span class="faq-icon">+</span></div>
+          <div class="faq-answer text-xs">Ofrecemos garant&iacute;a de satisfacci&oacute;n de 30 d&iacute;as. Si no notas diferencia en balance de pH, olor o comodidad, cont&aacute;ctanos para un reembolso completo &mdash; sin preguntas.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question text-sm">Informaci&oacute;n de env&iacute;o <span class="faq-icon">+</span></div>
+          <div class="faq-answer text-xs">Env&iacute;o gratis en pedidos de $899+. Entrega en 7&ndash;15 d&iacute;as h&aacute;biles. Enviamos desde M&eacute;xico con n&uacute;mero de rastreo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: REVIEW TESTIMONIAL CARD -->
+<section class="bg-card-bg py-8 px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-blush/30">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-full bg-blush flex items-center justify-center text-xl">&#128105;</div>
+        <div>
+          <p class="font-body font-semibold text-forest text-sm">Mariana T. &mdash; Compra Verificada</p>
+          <div class="stars text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+      </div>
+      <h3 class="font-display text-lg text-forest mb-2">&ldquo;Por fin romp&iacute; el ciclo de VB &mdash; llevo 3 meses&rdquo;</h3>
+      <p class="font-body text-sm text-text-muted leading-relaxed">
+        &ldquo;Me hab&iacute;an recetado metronidazol cuatro veces en el &uacute;ltimo a&ntilde;o. Cada vez funcionaba, pero la VB regresaba en 6 semanas. Estaba tan cansada y honestamente avergonzada de volver a ir al doctor. Descubr&iacute; las cepas GR1 y RC14 en un video de YouTube y empec&eacute; a tomar estas gomitas inmediatamente despu&eacute;s de mi &uacute;ltimo tratamiento con antibi&oacute;ticos. Semana 3: sin olor. Semana 6: mi gin&eacute;cologa dijo que todo se ve&iacute;a perfecto. Llevo 3 meses sin VB por primera vez en a&ntilde;os. Genuinamente me cambiaron la vida.&rdquo;
+      </p>
+      <div class="mt-3 flex items-center gap-2 flex-wrap">
+        <span class="bg-sage text-forest text-xs font-semibold px-3 py-1 rounded-full font-body">&#10003; Compra Verificada</span>
+        <span class="font-body text-xs text-text-muted">3 packs comprados &middot; 90 d&iacute;as us&aacute;ndolas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: UGC TESTIMONIALS GALLERY -->
+<section class="py-10 px-4 bg-soft-bg">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="font-display text-2xl text-forest text-center mb-6">Mujeres reales. Resultados reales.</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-xl p-4 border border-blush/30 shadow-sm">
+        <div class="stars text-xs mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs text-text-muted leading-relaxed">&ldquo;&iexcl;Se acab&oacute; el mal olor y mi pH est&aacute; perfecto! Estos probi&oacute;ticos me cambiaron la vida. Cambi&eacute; de un probi&oacute;tico gen&eacute;rico para mujer y la diferencia es incre&iacute;ble.&rdquo;</p>
+        <p class="font-body text-[11px] font-semibold text-forest mt-2">&mdash; Jessica R.</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 border border-blush/30 shadow-sm">
+        <div class="stars text-xs mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs text-text-muted leading-relaxed">&ldquo;S&eacute; que estos problemas son muy comunes pero nadie habla de ellos. El sabor a pi&ntilde;a hace que sea algo que espero cada ma&ntilde;ana. Y de verdad FUNCIONA.&rdquo;</p>
+        <p class="font-body text-[11px] font-semibold text-forest mt-2">&mdash; Keandra M.</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 border border-blush/30 shadow-sm">
+        <div class="stars text-xs mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs text-text-muted leading-relaxed">&ldquo;Ayuda al balance del pH vaginal, alivia el olor y la resequedad. Respaldado por ciencia, sabe incre&iacute;ble, 100% vegano. Por fin algo en lo que conf&iacute;o.&rdquo;</p>
+        <p class="font-body text-[11px] font-semibold text-forest mt-2">&mdash; Edith W.</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 border border-blush/30 shadow-sm">
+        <div class="stars text-xs mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs text-text-muted leading-relaxed">&ldquo;Tres a&ntilde;os con VB yendo y viniendo &mdash; y lo &uacute;nico que cambi&oacute; fue usar las cepas espec&iacute;ficas para la zona vaginal. Ojal&aacute; alguien me lo hubiera dicho antes.&rdquo;</p>
+        <p class="font-body text-[11px] font-semibold text-forest mt-2">&mdash; Aisha N.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: PRESS LOGOS BAR -->
+<section class="py-8 px-4 bg-white border-t border-b border-blush/30">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-body text-xs font-semibold text-text-muted uppercase tracking-brand mb-6">Mencionado en</p>
+    <div class="flex items-center justify-center gap-8 flex-wrap">
+      <span class="press-logo font-display font-bold text-xl text-forest tracking-wider">Forbes</span>
+      <span class="press-logo font-display italic font-bold text-xl text-forest">Vogue</span>
+      <span class="press-logo font-display font-bold text-xl text-forest tracking-widest text-sm uppercase">Elle</span>
+      <span class="press-logo font-display italic text-xl text-forest">Marie Claire</span>
+      <span class="press-logo font-body font-semibold text-base text-forest tracking-wider uppercase text-xs">InStyle</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: SOCIAL COUNTER -->
+<section class="py-10 px-4 bg-card-bg">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="font-display text-3xl md:text-4xl text-forest leading-tight">
+      12,000+ mujeres est&aacute;n rompiendo<br />el ciclo de VB con nosotras &#127800;
+    </h2>
+    <p class="font-body text-text-muted mt-3 text-sm">&Uacute;nete a miles que por fin encontraron las cepas correctas</p>
+  </div>
+</section>
+
+<!-- SECTION 9: UGC PHOTO GALLERY (auto-scroll) -->
+<section class="py-10 px-4 bg-soft-bg overflow-hidden">
+  <div class="max-w-7xl mx-auto overflow-hidden">
+    <div class="ugc-scroll-auto">
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 1</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 2</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 bg-card-bg flex items-center justify-center">
+        <div class="text-center p-3"><div class="text-3xl mb-1">&#127829;</div><p class="font-body text-[11px] text-text-muted">Sabor Pi&ntilde;a Tropical</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 3</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 bg-sage flex items-center justify-center">
+        <div class="text-center p-3"><div class="font-display text-forest text-2xl font-bold">4.8&#9733;</div><p class="font-body text-[11px] text-text-muted mt-1">2,847+ rese&ntilde;as</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 4</p></div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 1</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 2</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 bg-card-bg flex items-center justify-center">
+        <div class="text-center p-3"><div class="text-3xl mb-1">&#127829;</div><p class="font-body text-[11px] text-text-muted">Sabor Pi&ntilde;a Tropical</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 3</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 bg-sage flex items-center justify-center">
+        <div class="text-center p-3"><div class="font-display text-forest text-2xl font-bold">4.8&#9733;</div><p class="font-body text-[11px] text-text-muted mt-1">2,847+ rese&ntilde;as</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 w-36 h-48 md:w-48 md:h-60 product-placeholder">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-xs">Foto UGC 4</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 11: IT SMELLS AND TASTES SO GOOD -->
+<section class="py-12 px-4 bg-soft-bg">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="font-display text-3xl md:text-5xl text-forest leading-tight mb-4">
+      Huele y sabe <em class="italic text-coral">tan bien</em> ah&iacute; abajo.
+    </h2>
+    <p class="font-body text-text-muted text-base mb-8 max-w-2xl mx-auto">
+      Las Gomitas de Balance Femenino est&aacute;n <strong>infusionadas con extracto de Pi&ntilde;a Tropical</strong>, trabajando naturalmente para restaurar y mantener tu ambiente vaginal desde adentro hacia afuera:
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-left">
+      <div class="bg-white rounded-2xl p-5 border border-blush/30 shadow-sm">
+        <div class="text-2xl mb-2">&#127800;</div>
+        <h3 class="font-display text-forest font-semibold text-base mb-1">Mantente Fresca</h3>
+        <p class="font-body text-xs text-text-muted">Las enzimas de pi&ntilde;a + Lactobacillus trabajan juntas para mantener frescura natural d&iacute;a y noche.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-blush/30 shadow-sm">
+        <div class="text-2xl mb-2">&#128300;</div>
+        <h3 class="font-display text-forest font-semibold text-base mb-1">Equilibra tu pH</h3>
+        <p class="font-body text-xs text-text-muted">GR1 y RC14 producen &aacute;cido l&aacute;ctico que baja el pH vaginal al rango protector 3.8&ndash;4.5 donde la VB no puede prosperar.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-blush/30 shadow-sm">
+        <div class="text-2xl mb-2">&#127807;</div>
+        <h3 class="font-display text-forest font-semibold text-base mb-1">Reduce el Olor</h3>
+        <p class="font-body text-xs text-text-muted">Al atacar la causa ra&iacute;z &mdash; no solo enmascarar s&iacute;ntomas &mdash; tu aroma natural se normaliza conforme la flora recoloniza.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-blush/30 shadow-sm">
+        <div class="text-2xl mb-2">&#10084;&#65039;</div>
+        <h3 class="font-display text-forest font-semibold text-base mb-1">Cuida tu Salud V</h3>
+        <p class="font-body text-xs text-text-muted">Apoya la diversidad de flora vaginal y la barrera mucosa que mantiene la VB y la candidiasis bajo control.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-blush/30 shadow-sm">
+        <div class="text-2xl mb-2">&#128737;&#65039;</div>
+        <h3 class="font-display text-forest font-semibold text-base mb-1">Previene Infecciones</h3>
+        <p class="font-body text-xs text-text-muted">El uso diario consistente reconstruye la colonia de Lactobacillus que act&uacute;a como tu defensa natural &mdash; especialmente cr&iacute;tico despu&eacute;s de antibi&oacute;ticos.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-blush/30 shadow-sm">
+        <div class="text-2xl mb-2">&#10024;</div>
+        <h3 class="font-display text-forest font-semibold text-base mb-1">Si&eacute;ntete Segura</h3>
+        <p class="font-body text-xs text-text-muted">No m&aacute;s ansiedad de &uacute;ltimo momento. No m&aacute;s cancelar planes. Solo la tranquilidad de saber que tu cuerpo est&aacute; en balance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: HERO LIFESTYLE IMAGE (moved below benefits) -->
+<section class="py-0">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative overflow-hidden product-placeholder" style="height:340px;max-height:55vw;">
+      <div class="absolute inset-0 bg-gradient-to-t from-forest/50 to-transparent z-10"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white text-center z-20">
+        <h2 class="font-display text-2xl md:text-4xl italic">Sabe a premio.<br />Funciona como medicina.</h2>
+        <p class="font-body text-sm mt-2 text-white/80">Dos gomitas cada ma&ntilde;ana &mdash; el ritual que s&iacute; vas a mantener.</p>
+      </div>
+      <div class="z-0 flex items-center justify-center h-full">
+        <div>
+          <div class="text-4xl mb-2">&#128247;</div>
+          <p class="text-sm">Foto lifestyle &mdash; Hero de secci&oacute;n completa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 12: REVIEWS CAROUSEL -->
+<section class="py-12 px-4 bg-sage" id="reviews">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-8">
+      <h2 class="font-display text-3xl text-forest mb-2">Lo que dicen nuestras 12,000+ clientas</h2>
+      <div class="flex items-center justify-center gap-2">
+        <span class="stars text-xl">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="font-body font-bold text-forest text-lg">4.8 / 5</span>
+      </div>
+      <p class="font-body text-sm text-text-muted mt-1">Basado en <a href="#all-reviews" class="underline underline-offset-2">2,847 rese&ntilde;as verificadas</a></p>
+    </div>
+    <div class="relative overflow-hidden">
+      <div class="review-carousel-track" id="carousel-track">
+        <div class="review-card">
+          <div class="stars text-sm mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4 class="font-display text-forest font-semibold text-base mb-2">&ldquo;Por fin algo que de verdad funciona&rdquo;</h4>
+          <p class="font-body text-xs text-text-muted">&ldquo;Llevo 8 semanas tom&aacute;ndolas y tuve mi primer chequeo ginecol&oacute;gico limpio despu&eacute;s de 2 a&ntilde;os de VB recurrente. Mi doctora me pregunt&oacute; qu&eacute; hab&iacute;a cambiado. Las cepas GR1 y RC14 son reales &mdash; no solo marketing.&rdquo;</p>
+          <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Raquel K., CDMX</p>
+        </div>
+        <div class="review-card">
+          <div class="stars text-sm mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4 class="font-display text-forest font-semibold text-base mb-2">&ldquo;El sabor a pi&ntilde;a es genuinamente delicioso&rdquo;</h4>
+          <p class="font-body text-xs text-text-muted">&ldquo;Prob&eacute; Lemme Purr y OLLY antes de esto. Ninguno funcion&oacute; como yo necesitaba. Las cepas GR1/RC14 en estas son las espec&iacute;ficas que investugu&eacute;. Adem&aacute;s el sabor a pi&ntilde;a es incre&iacute;ble &mdash; se siente como un premio, no como medicina. &#127829;&rdquo;</p>
+          <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Brianna S., Guadalajara</p>
+        </div>
+        <div class="review-card">
+          <div class="stars text-sm mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4 class="font-display text-forest font-semibold text-base mb-2">&ldquo;Las empec&eacute; justo despu&eacute;s de antibi&oacute;ticos &mdash; mejor decisi&oacute;n&rdquo;</h4>
+          <p class="font-body text-xs text-text-muted">&ldquo;Cada vez que tomo antibi&oacute;ticos por lo que sea, ahora empiezo estas el mismo d&iacute;a que termino el tratamiento. Llevo 6 meses y no ha vuelto la VB ni una sola vez. El timing importa much&iacute;simo. Es mi no-negociable despu&eacute;s de cualquier antibi&oacute;tico.&rdquo;</p>
+          <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Diana P., Monterrey</p>
+        </div>
+        <div class="review-card">
+          <div class="stars text-sm mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4 class="font-display text-forest font-semibold text-base mb-2">&ldquo;Sin olor. Sin ansiedad.&rdquo;</h4>
+          <p class="font-body text-xs text-text-muted">&ldquo;Me daba pena hablar de esto con alguien. Googleaba mis s&iacute;ntomas a las 2am m&aacute;s veces de las que puedo contar. A las tres semanas la diferencia era clara. A las seis semanas me siento como una persona nueva.&rdquo;</p>
+          <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; M&oacute;nica T., Puebla</p>
+        </div>
+        <div class="review-card">
+          <div class="stars text-sm mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4 class="font-display text-forest font-semibold text-base mb-2">&ldquo;Hasta mi gin&eacute;cologa lo aprueba&rdquo;</h4>
+          <p class="font-body text-xs text-text-muted">&ldquo;Le pregunt&eacute; a mi gin&eacute;cologa sobre GR1 y RC14 antes de pedir. Confirm&oacute; que tienen investigaci&oacute;n cl&iacute;nica para salud vaginal y dijo que eran razonables. Ten&iacute;a raz&oacute;n. Voy en el mes 4 y seguir&eacute; pidiendo.&rdquo;</p>
+          <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Laura M., Quer&eacute;taro</p>
+        </div>
+      </div>
+      <div class="flex justify-center gap-3 mt-6">
+        <button onclick="carouselPrev()" class="w-10 h-10 rounded-full border-2 border-forest text-forest flex items-center justify-center hover:bg-forest hover:text-white transition-colors" aria-label="Rese&ntilde;as anteriores">&#8249;</button>
+        <button onclick="carouselNext()" class="w-10 h-10 rounded-full border-2 border-forest text-forest flex items-center justify-center hover:bg-forest hover:text-white transition-colors" aria-label="Siguientes rese&ntilde;as">&#8250;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 13: WHY IT WORKS -->
+<section class="py-12 px-4 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-display text-3xl md:text-4xl text-forest text-center mb-2">Por Qu&eacute; Funciona</h2>
+    <p class="font-body text-text-muted text-center text-sm mb-10 max-w-xl mx-auto">El Protocolo de Recolonizaci&oacute;n Vaginal&trade; &mdash; cuatro mecanismos trabajando juntos</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="bg-card-bg rounded-2xl p-6 border border-blush/30">
+        <div class="w-10 h-10 bg-forest rounded-xl flex items-center justify-center text-lg mb-4">&#127829;</div>
+        <h3 class="font-display text-forest font-semibold text-lg uppercase tracking-wide mb-2">La Ciencia de la Pi&ntilde;a</h3>
+        <p class="font-body text-sm text-text-muted">El extracto de Pi&ntilde;a Tropical contiene bromelina &mdash; una enzima natural que act&uacute;a como prebi&oacute;tico, creando el ambiente ideal para que Lactobacillus se establezca y prospere en tu tracto vaginal.</p>
+      </div>
+      <div class="bg-card-bg rounded-2xl p-6 border border-blush/30">
+        <div class="w-10 h-10 bg-forest rounded-xl flex items-center justify-center text-lg mb-4">&#128737;&#65039;</div>
+        <h3 class="font-display text-forest font-semibold text-lg uppercase tracking-wide mb-2">Escudo de pH 24 Horas</h3>
+        <p class="font-body text-sm text-text-muted">Lactobacillus GR1 y RC14 producen &aacute;cido l&aacute;ctico continuamente, manteniendo tu pH vaginal en el rango protector 3.8&ndash;4.5 las 24 horas &mdash; incluso durante el ejercicio, la intimidad y cambios hormonales.</p>
+      </div>
+      <div class="bg-card-bg rounded-2xl p-6 border border-blush/30">
+        <div class="w-10 h-10 bg-forest rounded-xl flex items-center justify-center text-lg mb-4">&#128260;</div>
+        <h3 class="font-display text-forest font-semibold text-lg uppercase tracking-wide mb-2">El Protocolo de Recolonizaci&oacute;n</h3>
+        <p class="font-body text-sm text-text-muted">A diferencia de productos que enmascaran s&iacute;ntomas, GR1 y RC14 realmente migran de tu intestino a tu tracto vaginal, recolonizando f&iacute;sicamente la mucosa con Lactobacillus protector &mdash; rompiendo el ciclo recurrente de VB desde la ra&iacute;z.</p>
+      </div>
+      <div class="bg-card-bg rounded-2xl p-6 border border-blush/30">
+        <div class="w-10 h-10 bg-forest rounded-xl flex items-center justify-center text-lg mb-4">&#127919;</div>
+        <h3 class="font-display text-forest font-semibold text-lg uppercase tracking-wide mb-2">La Ventaja de la Consistencia</h3>
+        <p class="font-body text-sm text-text-muted">El beneficio cl&iacute;nico de GR1 y RC14 es real &mdash; pero solo con consistencia diaria. Las c&aacute;psulas se olvidan. Nuestra gomita de Pi&ntilde;a Tropical se convierte en un ritual que esperas con ganas. La consistencia crea la colonia. La colonia te protege.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="py-10 px-4 bg-cream/30">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="font-display text-2xl md:text-3xl text-forest mb-2">Qu&eacute; Contiene</h2>
+    <p class="font-body text-text-muted text-sm mb-6">Ingredientes transparentes. Dosis cl&iacute;nicas. Nada que no puedas pronunciar.</p>
+
+    <!-- Ingredient hero image -->
+    <div class="rounded-2xl overflow-hidden mb-6 product-placeholder" style="height:200px;">
+      <div>
+        <div class="text-3xl mb-1">&#129514;</div>
+        <p class="font-semibold text-forest text-sm">Foto flatlay de ingredientes</p>
+        <p class="text-xs">Ingredientes naturales sobre fondo claro</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-white rounded-xl p-3 text-center border border-blush/30">
+        <div class="w-12 h-12 mx-auto rounded-full product-placeholder mb-2" style="padding:0;">
+          <div class="text-lg">&#129418;</div>
+        </div>
+        <p class="font-body text-xs font-bold text-forest">L. rhamnosus GR1</p>
+        <p class="font-body text-[10px] text-text-muted mt-1">Recoloniza flora vaginal, restaura pH</p>
+      </div>
+      <div class="bg-white rounded-xl p-3 text-center border border-blush/30">
+        <div class="w-12 h-12 mx-auto rounded-full product-placeholder mb-2" style="padding:0;">
+          <div class="text-lg">&#129418;</div>
+        </div>
+        <p class="font-body text-xs font-bold text-forest">L. reuteri RC14</p>
+        <p class="font-body text-[10px] text-text-muted mt-1">Defiende contra bacterias VB</p>
+      </div>
+      <div class="bg-white rounded-xl p-3 text-center border border-blush/30">
+        <div class="w-12 h-12 mx-auto rounded-full product-placeholder mb-2" style="padding:0;">
+          <div class="text-lg">&#127829;</div>
+        </div>
+        <p class="font-body text-xs font-bold text-forest">Extracto de Pi&ntilde;a</p>
+        <p class="font-body text-[10px] text-text-muted mt-1">Bromelina prebi&oacute;tica, apoya frescura</p>
+      </div>
+      <div class="bg-white rounded-xl p-3 text-center border border-blush/30">
+        <div class="w-12 h-12 mx-auto rounded-full product-placeholder mb-2" style="padding:0;">
+          <div class="text-lg">&#127818;</div>
+        </div>
+        <p class="font-body text-xs font-bold text-forest">Vitamina C</p>
+        <p class="font-body text-[10px] text-text-muted mt-1">Defensa inmune vaginal</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-center gap-4 flex-wrap mt-5">
+      <span class="font-body text-[11px] text-text-muted">&#10003; Veganas</span>
+      <span class="font-body text-[11px] text-text-muted">&#10003; Sin Gluten</span>
+      <span class="font-body text-[11px] text-text-muted">&#10003; Sin Az&uacute;car</span>
+      <span class="font-body text-[11px] text-text-muted">&#10003; Sin GMO</span>
+      <span class="font-body text-[11px] text-text-muted">&#10003; GMP</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 14: JOIN OUR FAMILY -->
+<section class="py-10 px-4 bg-soft-bg">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="font-display text-3xl text-forest mb-6">&Uacute;nete a Nuestra Familia &#127800;</h2>
+    <div class="overflow-hidden">
+      <div class="ugc-scroll-auto" style="animation-direction: reverse; animation-duration: 20s;">
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 product-placeholder">
+          <div><div class="text-lg mb-1">&#128248;</div><p class="text-[10px]">Comunidad 1</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 bg-card-bg flex items-center justify-center">
+          <div class="text-center p-2"><div class="font-display text-forest text-xl font-bold">12,000+</div><div class="font-body text-[10px] text-text-muted mt-1">mujeres felices</div></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 product-placeholder">
+          <div><div class="text-lg mb-1">&#128248;</div><p class="text-[10px]">Comunidad 2</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 bg-sage flex items-center justify-center">
+          <div class="text-center p-2"><div class="stars text-base">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="font-display text-forest text-xl font-bold mt-1">4.8</div></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 product-placeholder">
+          <div><div class="text-lg mb-1">&#128248;</div><p class="text-[10px]">Comunidad 3</p></div>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 product-placeholder">
+          <div><div class="text-lg mb-1">&#128248;</div><p class="text-[10px]">Comunidad 1</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 bg-card-bg flex items-center justify-center">
+          <div class="text-center p-2"><div class="font-display text-forest text-xl font-bold">12,000+</div><div class="font-body text-[10px] text-text-muted mt-1">mujeres felices</div></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 product-placeholder">
+          <div><div class="text-lg mb-1">&#128248;</div><p class="text-[10px]">Comunidad 2</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 bg-sage flex items-center justify-center">
+          <div class="text-center p-2"><div class="stars text-base">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="font-display text-forest text-xl font-bold mt-1">4.8</div></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden flex-shrink-0 w-32 h-40 md:w-40 md:h-48 product-placeholder">
+          <div><div class="text-lg mb-1">&#128248;</div><p class="text-[10px]">Comunidad 3</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON: WHY US (mobile-friendly stacked cards) -->
+<section class="py-12 px-4 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-display text-2xl md:text-3xl text-forest text-center mb-2">Por Qu&eacute; Nos Eligen</h2>
+    <p class="font-body text-text-muted text-center text-sm mb-6">vs. las alternativas que ya probaron</p>
+    <div class="space-y-3">
+      <div class="bg-sage/40 rounded-xl p-4 border border-sage">
+        <div class="flex items-start gap-3">
+          <span class="text-coral font-bold text-lg flex-shrink-0 mt-0.5">&#10003;</span>
+          <div>
+            <p class="font-body text-sm font-semibold text-forest">Cepas GR1 y RC14 cl&iacute;nicamente estudiadas</p>
+            <p class="font-body text-xs text-text-muted mt-1">Las &uacute;nicas dos cepas probadas para salud vaginal. Probi&oacute;ticos gen&eacute;ricos y antibi&oacute;ticos no las tienen.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-sage/40 rounded-xl p-4 border border-sage">
+        <div class="flex items-start gap-3">
+          <span class="text-coral font-bold text-lg flex-shrink-0 mt-0.5">&#10003;</span>
+          <div>
+            <p class="font-body text-sm font-semibold text-forest">Ataca la causa ra&iacute;z, no solo s&iacute;ntomas</p>
+            <p class="font-body text-xs text-text-muted mt-1">Los antibi&oacute;ticos matan bacterias buenas y malas. Florae recoloniza solo las buenas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-sage/40 rounded-xl p-4 border border-sage">
+        <div class="flex items-start gap-3">
+          <span class="text-coral font-bold text-lg flex-shrink-0 mt-0.5">&#10003;</span>
+          <div>
+            <p class="font-body text-sm font-semibold text-forest">Ritual diario que s&iacute; vas a mantener</p>
+            <p class="font-body text-xs text-text-muted mt-1">Sabor a pi&ntilde;a tropical. Las c&aacute;psulas se olvidan &mdash; las gomitas se esperan con ganas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-sage/40 rounded-xl p-4 border border-sage">
+        <div class="flex items-start gap-3">
+          <span class="text-coral font-bold text-lg flex-shrink-0 mt-0.5">&#10003;</span>
+          <div>
+            <p class="font-body text-sm font-semibold text-forest">Protecci&oacute;n a largo plazo</p>
+            <p class="font-body text-xs text-text-muted mt-1">Construye una colonia protectora de Lactobacillus. Los antibi&oacute;ticos solo dan alivio temporal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-sage/40 rounded-xl p-4 border border-sage">
+        <div class="flex items-start gap-3">
+          <span class="text-coral font-bold text-lg flex-shrink-0 mt-0.5">&#10003;</span>
+          <div>
+            <p class="font-body text-sm font-semibold text-forest">$549/mes vs. consultas + antibi&oacute;ticos recurrentes</p>
+            <p class="font-body text-xs text-text-muted mt-1">Un frasco de 30 d&iacute;as cuesta menos que una sola consulta ginecol&oacute;gica.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 15: FAQ COMPLETE -->
+<section class="py-12 px-4 bg-cream/20" id="full-faq">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-display text-3xl text-forest text-center mb-8">Preguntas Frecuentes</h2>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Cu&aacute;nto tardar&eacute; en ver resultados? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">La mayor&iacute;a de las mujeres notan mejora en frescura y comodidad en 2&ndash;3 semanas de uso diario consistente. La recolonizaci&oacute;n completa de flora vaginal &mdash; el proceso donde GR1 y RC14 establecen una colonia protectora de Lactobacillus &mdash; t&iacute;picamente toma 4&ndash;8 semanas. Los resultados var&iacute;an seg&uacute;n el estado actual de tu flora vaginal. El pack de 3 (suministro de 90 d&iacute;as) est&aacute; dise&ntilde;ado espec&iacute;ficamente para completar el protocolo completo de recolonizaci&oacute;n.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Puedo tomarlas con otros suplementos? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">S&iacute;. Las Gomitas de Balance Femenino est&aacute;n formuladas para ser seguras junto con otros suplementos. Si est&aacute;s tomando antibi&oacute;ticos, empieza las gomitas inmediatamente despu&eacute;s de terminar tu tratamiento &mdash; no durante, ya que los antibi&oacute;ticos pueden reducir la efectividad probi&oacute;tica. Siempre consulta a tu profesional de salud, especialmente si tienes condiciones de salud subyacentes o est&aacute;s embarazada.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Debo usarlas si no tengo problemas de olor o VB? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">S&iacute; &mdash; muchas mujeres usan las Gomitas de Balance Femenino de forma preventiva para mantener el pH vaginal &oacute;ptimo y prevenir problemas antes de que comiencen. La colonia de Lactobacillus que construyes con el uso consistente act&uacute;a como un sistema de defensa continuo, especialmente &uacute;til despu&eacute;s de antibi&oacute;ticos, cambios hormonales, viajes o estr&eacute;s.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Son veganas y sin gluten? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">S&iacute;. Las Gomitas de Balance Femenino son 100% veganas (sin gelatina &mdash; usan pectina de fruta), sin gluten y sin az&uacute;car (endulzadas con extracto de fruto del monje). Sin colorantes artificiales, sin saborizantes artificiales, sin ingredientes GMO. La f&oacute;rmula es fabricada en una instalaci&oacute;n certificada GMP.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Hay efectos secundarios? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Los suplementos probi&oacute;ticos generalmente son bien tolerados. Un peque&ntilde;o n&uacute;mero de mujeres experimenta un ajuste digestivo leve (hinchaz&oacute;n, gases) en los primeros d&iacute;as &mdash; esto t&iacute;picamente se resuelve conforme tu intestino se ajusta. Si experimentas cualquier molestia persistente, suspende el uso y consulta a tu profesional de salud. Estas declaraciones no han sido evaluadas por la COFEPRIS. Este producto no est&aacute; destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Se puede usar durante el embarazo? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Recomendamos consultar a tu ginec&oacute;logo/a o profesional de salud antes de tomar cualquier suplemento nuevo durante el embarazo o lactancia. Aunque los suplementos probi&oacute;ticos generalmente se consideran seguros, las circunstancias m&eacute;dicas individuales var&iacute;an y tu m&eacute;dico/a est&aacute; mejor posicionado/a para aconsejarte.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Qu&eacute; hace diferentes a GR1 y RC14 de otras cepas probi&oacute;ticas? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Lactobacillus rhamnosus GR1 y Lactobacillus reuteri RC14 son las dos cepas de Lactobacillus m&aacute;s estudiadas cl&iacute;nicamente espec&iacute;ficamente para salud vaginal. A diferencia de las cepas usadas en probi&oacute;ticos intestinales, GR1 y RC14 tienen investigaci&oacute;n publicada demostrando su capacidad de colonizar la mucosa vaginal, producir &aacute;cido l&aacute;ctico para bajar el pH vaginal y desplazar bacterias asociadas a VB. La mayor&iacute;a de los &ldquo;probi&oacute;ticos para mujer&rdquo; gen&eacute;ricos contienen cepas estudiadas para digesti&oacute;n, no para flora vaginal.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;Cu&aacute;l es la pol&iacute;tica de env&iacute;o? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Entrega en 7&ndash;15 d&iacute;as h&aacute;biles. Env&iacute;o gratis en pedidos de $899+. Todos los pedidos se env&iacute;an desde M&eacute;xico e incluyen n&uacute;mero de rastreo enviado a tu correo.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">&iquest;C&oacute;mo funciona la garant&iacute;a de 30 d&iacute;as? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Simple: si no est&aacute;s satisfecha con las Gomitas de Balance Femenino dentro de los 30 d&iacute;as posteriores a recibir tu pedido, cont&aacute;ctanos en hola@florae.mx y te haremos un reembolso completo sin preguntas. Respaldamos el producto porque sabemos que el uso consistente funciona.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 16: CUSTOMER REVIEWS (DYNAMIC from reviews.json) -->
+<section class="py-12 px-4 bg-white" id="all-reviews">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-8">
+      <h2 class="font-display text-3xl text-forest mb-2">Rese&ntilde;as de Clientas</h2>
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <span class="font-display text-5xl font-bold text-forest">4.8</span>
+        <div>
+          <div class="stars text-xl">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="font-body text-xs text-text-muted mt-1">Basado en <span id="total-reviews-count">97</span> rese&ntilde;as</p>
+        </div>
+      </div>
+      <!-- Rating distribution -->
+      <div class="max-w-xs mx-auto mt-4 space-y-1.5">
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs text-text-muted w-8">5 &#9733;</span>
+          <div class="rating-bar flex-1"><div class="rating-bar-fill" id="bar-5" style="width:60%"></div></div>
+          <span class="font-body text-xs text-text-muted w-6 text-right" id="count-5">58</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs text-text-muted w-8">4 &#9733;</span>
+          <div class="rating-bar flex-1"><div class="rating-bar-fill" id="bar-4" style="width:25%"></div></div>
+          <span class="font-body text-xs text-text-muted w-6 text-right" id="count-4">24</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs text-text-muted w-8">3 &#9733;</span>
+          <div class="rating-bar flex-1"><div class="rating-bar-fill" id="bar-3" style="width:15%"></div></div>
+          <span class="font-body text-xs text-text-muted w-6 text-right" id="count-3">15</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs text-text-muted w-8">2 &#9733;</span>
+          <div class="rating-bar flex-1"><div class="rating-bar-fill" id="bar-2" style="width:0%"></div></div>
+          <span class="font-body text-xs text-text-muted w-6 text-right" id="count-2">0</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs text-text-muted w-8">1 &#9733;</span>
+          <div class="rating-bar flex-1"><div class="rating-bar-fill" id="bar-1" style="width:0%"></div></div>
+          <span class="font-body text-xs text-text-muted w-6 text-right" id="count-1">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews grid (populated by JS) -->
+    <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+
+    <!-- Load more -->
+    <div class="text-center mt-8">
+      <button id="load-more-btn" onclick="loadMoreReviews()" class="font-body text-sm font-semibold text-forest border-2 border-forest px-6 py-3 rounded-lg hover:bg-forest hover:text-white transition-colors">
+        Ver m&aacute;s rese&ntilde;as &#8595;
+      </button>
+      <p class="font-body text-xs text-text-muted mt-2" id="reviews-showing">Mostrando 6 de 97</p>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="#buy-box" class="btn-primary inline-block" style="width:auto;padding:16px 40px;">
+        Comenzar Mi Prueba Sin Riesgo de 30 D&iacute;as &#8594;
+      </a>
+      <p class="font-body text-xs text-text-muted mt-3">Env&iacute;o gratis en 2+ packs &middot; Garant&iacute;a de devoluci&oacute;n 30 d&iacute;as</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 17: NEWSLETTER -->
+<section class="py-10 px-4 bg-forest text-white">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="font-display text-2xl md:text-3xl text-cream mb-2">S&eacute; la primera en enterarte</h2>
+    <p class="font-body text-white/70 text-sm mb-6">Acceso anticipado a nuevos productos, ofertas exclusivas e informaci&oacute;n sobre salud femenina &mdash; sin spam, nunca.</p>
+    <form class="flex gap-2 max-w-sm mx-auto" onsubmit="return false;">
+      <input type="email" placeholder="tu@email.com" class="flex-1 rounded-lg px-4 py-3 font-body text-sm text-forest placeholder-text-muted/50 bg-white border-0 outline-none focus:ring-2 focus:ring-cream" />
+      <button type="submit" class="bg-cream text-forest font-body font-semibold text-sm px-5 py-3 rounded-lg hover:bg-blush transition-colors flex-shrink-0">Suscribirme &#8594;</button>
+    </form>
+    <p class="font-body text-xs text-white/40 mt-3">* Prometemos no usar tu correo para spam.</p>
+  </div>
+</section>
+
+<!-- SECTION 18: FOOTER -->
+<footer class="bg-soft-bg border-t border-blush/50">
+  <div class="max-w-7xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <div class="font-display text-forest font-bold tracking-brand text-sm uppercase mb-2">Florae</div>
+        <p class="font-body text-xs text-text-muted leading-relaxed mb-4">Suplementos premium de bienestar femenino. Cepas probi&oacute;ticas cl&iacute;nicamente estudiadas para salud vaginal duradera, balance de pH y frescura.</p>
+        <a href="index.html" class="btn-primary text-xs" style="width:auto;display:inline-block;padding:10px 20px;">Comprar Ahora</a>
+      </div>
+      <div>
+        <p class="font-body text-xs font-bold text-forest uppercase tracking-wider mb-4">Informaci&oacute;n</p>
+        <ul class="space-y-2">
+          <li><a href="#full-faq" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Preguntas Frecuentes</a></li>
+          <li><a href="envios.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Pol&iacute;tica de Env&iacute;os</a></li>
+          <li><a href="devoluciones.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Devoluciones y Reembolsos</a></li>
+          <li><a href="terminos.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">T&eacute;rminos de Servicio</a></li>
+          <li><a href="privacidad.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Pol&iacute;tica de Privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-body text-xs font-bold text-forest uppercase tracking-wider mb-4">Tienda</p>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">1 Pack &mdash; 1 Mes</a></li>
+          <li><a href="index.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">2 Packs &mdash; 2 Meses</a></li>
+          <li><a href="index.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">3 Packs &mdash; Mejor Valor</a></li>
+          <li><a href="#all-reviews" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Rese&ntilde;as</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-body text-xs font-bold text-forest uppercase tracking-wider mb-4">Contacto</p>
+        <ul class="space-y-2">
+          <li><a href="contacto.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Cont&aacute;ctanos</a></li>
+          <li><span class="font-body text-xs text-text-muted">hola@florae.mx</span></li>
+          <li><span class="font-body text-xs text-text-muted">Lun&ndash;Vie &middot; 9am&ndash;6pm CST</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-blush/30 max-w-7xl mx-auto px-4 py-5">
+    <p class="font-body text-[10px] text-text-muted/60 leading-relaxed text-center mb-3">
+      *Estas declaraciones no han sido evaluadas por la COFEPRIS. Este producto no est&aacute; destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Los resultados pueden variar. Consulta a tu profesional de salud antes de comenzar cualquier suplemento nuevo.
+    </p>
+    <p class="font-body text-xs text-text-muted text-center">&copy; 2026 Florae. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- STICKY CTA BAR -->
+<div id="sticky-cta" role="complementary" aria-label="Agregar al carrito r&aacute;pido">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <div class="hidden md:block">
+      <p class="font-display text-cream text-sm font-semibold">Gomitas Balance Femenino</p>
+      <div class="stars text-xs" style="color:#D4A017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    </div>
+    <div class="flex items-center gap-4 flex-1 md:flex-none justify-between md:justify-end">
+      <div class="text-center md:text-right">
+        <span class="font-body text-cream font-bold text-sm">$1,149</span>
+        <span class="font-body text-white/40 text-[10px] line-through ml-1">$2,397</span>
+      </div>
+
+      <button onclick="window.location.href='#buy-box'" class="bg-cream text-forest font-body font-bold text-xs py-2.5 px-5 rounded-lg hover:bg-blush transition-colors flex-shrink-0 uppercase tracking-wider">
+        Agregar al Carrito
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+  // ANNOUNCEMENT BAR ROTATION
+  (function() {
+    var msgs = document.querySelectorAll('.announcement-msg');
+    var current = 0;
+    setInterval(function() {
+      msgs[current].classList.remove('active');
+      current = (current + 1) % msgs.length;
+      msgs[current].classList.add('active');
+    }, 4000);
+  })();
+
+  // COUNTDOWN TIMER
+  function updateTimer() {
+    var now = new Date();
+    var midnight = new Date(now);
+    midnight.setHours(23, 59, 59, 999);
+    var diff = midnight - now;
+    var hrs = Math.floor(diff / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    var secs = Math.floor((diff % 60000) / 1000);
+    function pad(n) { return String(n).padStart(2, '0'); }
+    var el = document.getElementById('timer-display');
+    if (el) el.textContent = pad(hrs) + ':' + pad(mins) + ':' + pad(secs);
+  }
+  updateTimer();
+  setInterval(updateTimer, 1000);
+
+  // DELIVERY DATE CALCULATION (Mexico: 7-15 business days)
+  (function() {
+    var now = new Date();
+    var d1 = new Date(now); d1.setDate(now.getDate() + 7);
+    var d2 = new Date(now); d2.setDate(now.getDate() + 15);
+    while (d1.getDay() === 0 || d1.getDay() === 6) d1.setDate(d1.getDate() + 1);
+    while (d2.getDay() === 0 || d2.getDay() === 6) d2.setDate(d2.getDate() + 1);
+    var months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    var days = ['Dom','Lun','Mar','Mi\u00e9','Jue','Vie','S\u00e1b'];
+    var s1 = days[d1.getDay()] + ', ' + d1.getDate() + ' ' + months[d1.getMonth()];
+    var s2 = days[d2.getDay()] + ', ' + d2.getDate() + ' ' + months[d2.getMonth()];
+    var el = document.getElementById('delivery-date');
+    if (el) el.textContent = s1 + ' \u2013 ' + s2;
+  })();
+
+  // BUNDLE SELECTOR
+  function selectBundle(n) {
+    var ids = ['bundle-1', 'bundle-2', 'bundle-3'];
+    ids.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.remove('selected');
+    });
+    var target = document.getElementById('bundle-' + n);
+    if (target) target.classList.add('selected');
+  }
+
+  // FAQ TOGGLES
+  function toggleFaq(item) {
+    var answer = item.querySelector('.faq-answer');
+    var icon = item.querySelector('.faq-icon');
+    var isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-answer.open').forEach(function(el) {
+      el.classList.remove('open');
+      var ic = el.parentElement.querySelector('.faq-icon');
+      if (ic) ic.classList.remove('rotated');
+    });
+    if (!isOpen) {
+      answer.classList.add('open');
+      if (icon) icon.classList.add('rotated');
+    }
+  }
+
+  // PRODUCT GALLERY
+  var galleryPanels = ['placeholder', 'ingredients', 'lifestyle', 'ugc1', 'ugc2'];
+  function showPanel(name, btn) {
+    galleryPanels.forEach(function(p) {
+      var el = document.getElementById('panel-' + p);
+      if (el) el.classList.remove('active');
+    });
+    var target = document.getElementById('panel-' + name);
+    if (target) target.classList.add('active');
+    document.querySelectorAll('.thumb-btn').forEach(function(b) {
+      b.classList.remove('thumb-active');
+      b.style.borderColor = 'transparent';
+      b.style.opacity = '0.7';
+    });
+    if (btn) {
+      btn.classList.add('thumb-active');
+      btn.style.borderColor = '#1A2E1A';
+      btn.style.opacity = '1';
+    }
+  }
+
+  // REVIEW CAROUSEL
+  var carouselIndex = 0;
+  function carouselNext() {
+    var track = document.getElementById('carousel-track');
+    if (!track) return;
+    var cards = track.querySelectorAll('.review-card');
+    var perView = window.innerWidth < 768 ? 1 : 3;
+    var maxIndex = Math.max(0, cards.length - perView);
+    carouselIndex = Math.min(carouselIndex + 1, maxIndex);
+    if (cards.length > 0) {
+      var cardWidth = cards[0].offsetWidth + 16;
+      track.style.transform = 'translateX(-' + (carouselIndex * cardWidth) + 'px)';
+    }
+  }
+  function carouselPrev() {
+    var track = document.getElementById('carousel-track');
+    if (!track) return;
+    var cards = track.querySelectorAll('.review-card');
+    carouselIndex = Math.max(0, carouselIndex - 1);
+    if (cards.length > 0) {
+      var cardWidth = cards[0].offsetWidth + 16;
+      track.style.transform = 'translateX(-' + (carouselIndex * cardWidth) + 'px)';
+    }
+  }
+
+  // STICKY CTA
+  (function() {
+    var buyBox = document.getElementById('buy-box');
+    var stickyCta = document.getElementById('sticky-cta');
+    if (!buyBox || !stickyCta) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          stickyCta.classList.add('visible');
+        } else {
+          stickyCta.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0 });
+    observer.observe(buyBox);
+  })();
+
+  // MOBILE MENU
+  (function() {
+    var toggle = document.getElementById('menu-toggle');
+    var close = document.getElementById('menu-close');
+    var menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', function() {
+        menu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    if (close && menu) {
+      close.addEventListener('click', function() {
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  })();
+
+  // DYNAMIC REVIEWS FROM reviews.json (safe DOM methods only)
+  var allReviews = [];
+  var reviewsShown = 0;
+  var reviewsPerPage = 6;
+
+  function createStarsElement(count) {
+    var span = document.createElement('span');
+    span.className = 'stars-small';
+    var text = '';
+    for (var i = 0; i < 5; i++) {
+      text += i < count ? '\u2605' : '\u2606';
+    }
+    span.textContent = text;
+    return span;
+  }
+
+  function createReviewElement(review) {
+    var card = document.createElement('div');
+    card.className = 'review-grid-item';
+
+    // Header: name + location
+    var header = document.createElement('div');
+    header.className = 'flex items-center gap-2 mb-2';
+    var name = document.createElement('span');
+    name.className = 'font-body text-sm font-semibold text-forest';
+    name.textContent = review.name;
+    var loc = document.createElement('span');
+    loc.className = 'font-body text-xs text-text-muted';
+    loc.textContent = '\u00B7 ' + review.location;
+    header.appendChild(name);
+    header.appendChild(loc);
+    card.appendChild(header);
+
+    // Stars
+    var starsWrap = document.createElement('div');
+    starsWrap.className = 'mb-2';
+    starsWrap.appendChild(createStarsElement(review.stars));
+    card.appendChild(starsWrap);
+
+    // Verified badge
+    if (review.verified) {
+      var badge = document.createElement('span');
+      badge.className = 'bg-sage text-forest text-[10px] font-bold px-2 py-0.5 rounded-full font-body inline-block mb-2';
+      badge.textContent = '\u2713 Compra Verificada';
+      card.appendChild(badge);
+    }
+
+    // Title
+    var title = document.createElement('p');
+    title.className = 'font-body text-xs font-semibold text-forest mb-1';
+    title.textContent = review.title;
+    card.appendChild(title);
+
+    // Body
+    var body = document.createElement('p');
+    body.className = 'font-body text-xs text-text-muted leading-relaxed';
+    body.textContent = '\u201C' + review.body + '\u201D';
+    card.appendChild(body);
+
+    // Footer: date + helpful
+    var footer = document.createElement('div');
+    footer.className = 'flex items-center gap-3 mt-3';
+    var date = document.createElement('span');
+    date.className = 'font-body text-[11px] text-text-muted';
+    date.textContent = review.date;
+    footer.appendChild(date);
+    if (review.helpful > 0) {
+      var helpful = document.createElement('span');
+      helpful.className = 'font-body text-[11px] text-text-muted';
+      helpful.textContent = '\uD83D\uDC4D ' + review.helpful + ' \u00FAtil';
+      footer.appendChild(helpful);
+    }
+    card.appendChild(footer);
+
+    return card;
+  }
+
+  function loadMoreReviews() {
+    var grid = document.getElementById('reviews-grid');
+    var end = Math.min(reviewsShown + reviewsPerPage, allReviews.length);
+    for (var i = reviewsShown; i < end; i++) {
+      grid.appendChild(createReviewElement(allReviews[i]));
+    }
+    reviewsShown = end;
+    var showingEl = document.getElementById('reviews-showing');
+    if (showingEl) showingEl.textContent = 'Mostrando ' + reviewsShown + ' de ' + allReviews.length;
+    var btn = document.getElementById('load-more-btn');
+    if (btn && reviewsShown >= allReviews.length) {
+      btn.style.display = 'none';
+    }
+  }
+
+  // Load reviews on page load
+  fetch('reviews.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      allReviews = data;
+      var counts = {5:0, 4:0, 3:0, 2:0, 1:0};
+      var total = data.length;
+      data.forEach(function(r) { counts[r.stars] = (counts[r.stars] || 0) + 1; });
+      for (var s = 1; s <= 5; s++) {
+        var barEl = document.getElementById('bar-' + s);
+        var countEl = document.getElementById('count-' + s);
+        if (barEl) barEl.style.width = (counts[s] / total * 100) + '%';
+        if (countEl) countEl.textContent = counts[s];
+      }
+      var totalEl = document.getElementById('total-reviews-count');
+      if (totalEl) totalEl.textContent = total;
+      loadMoreReviews();
+    })
+    .catch(function() {
+      var grid = document.getElementById('reviews-grid');
+      if (grid) {
+        var msg = document.createElement('p');
+        msg.className = 'font-body text-sm text-text-muted text-center col-span-2';
+        msg.textContent = 'Las rese\u00F1as se cargar\u00E1n pronto...';
+        grid.appendChild(msg);
+      }
+    });
+</script>
+
+</body>
+</html>
