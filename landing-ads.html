@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florea — La Gomita que Restaura Tu Flora Vaginal en 14 Días</title>
+  <meta name="description" content="Gomitas probióticas con cepas GR1 y RC14 clínicamente estudiadas. Restaura tu pH vaginal de forma natural. Más de 12,000 mujeres ya confían en Florea." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#1A2E1A',
+            'forest-light': '#2A3E2A',
+            blush: '#F4C2C2',
+            cream: '#F5E6C8',
+            'soft-bg': '#FFF5F5',
+            'card-bg': '#FDE8E8',
+            sage: '#E8F0E8',
+            'sage-dark': '#C5D9C5',
+            'text-muted': '#8B6B6B',
+            gold: '#D4A017',
+            'gold-hover': '#B8900F',
+            coral: '#E85D3A',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --forest: #1A2E1A;
+      --blush: #F4C2C2;
+      --cream: #F5E6C8;
+      --soft-bg: #FFF5F5;
+      --card-bg: #FDE8E8;
+      --sage: #E8F0E8;
+      --gold: #D4A017;
+      --coral: #E85D3A;
+      --muted: #8B6B6B;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--soft-bg);
+      color: var(--forest);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: -0.03em;
+    }
+
+    /* ── Placeholder images ── */
+    .ph {
+      background: linear-gradient(135deg, #F4C2C2 0%, #FDE8E8 50%, #E8F0E8 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; text-align: center;
+      font-family: 'DM Sans', sans-serif; color: var(--muted); font-size: 13px;
+    }
+    .ph::after {
+      content: ''; position: absolute; inset: 10px;
+      border: 2px dashed rgba(139,107,107,0.2); border-radius: inherit;
+      pointer-events: none;
+    }
+
+    /* ── CTA Button ── */
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--forest);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 16px 36px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-align: center;
+      width: 100%;
+      max-width: 380px;
+    }
+    .cta-btn:hover {
+      background: var(--gold-hover, #B8900F);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212,160,23,0.3);
+    }
+
+    /* ── Stars ── */
+    .stars { color: var(--gold); letter-spacing: 2px; }
+
+    /* ── Fade in animation ── */
+    .fade-up {
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    /* ── Press logos ── */
+    .press-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #999;
+      opacity: 0.6;
+    }
+
+    /* ── Bundle card ── */
+    .bundle-card {
+      border: 2px solid #E8E0D8;
+      border-radius: 16px;
+      padding: 20px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .bundle-card:hover, .bundle-card.active {
+      border-color: var(--forest);
+      box-shadow: 0 4px 20px rgba(26,46,26,0.1);
+    }
+    .bundle-card.popular {
+      border-color: var(--coral);
+    }
+    .bundle-card.popular::before {
+      content: 'MÁS POPULAR';
+      position: absolute;
+      top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--coral);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 16px;
+      border-radius: 999px;
+    }
+
+    /* ── FAQ accordion ── */
+    .faq-item { border-bottom: 1px solid rgba(26,46,26,0.1); }
+    .faq-toggle { display: none; }
+    .faq-label {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; cursor: pointer; font-weight: 600; font-size: 15px;
+    }
+    .faq-label::after {
+      content: '+'; font-size: 22px; font-weight: 300; color: var(--muted);
+      transition: transform 0.3s ease;
+    }
+    .faq-toggle:checked + .faq-label::after {
+      content: '−'; transform: rotate(180deg);
+    }
+    .faq-content {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-toggle:checked ~ .faq-content {
+      max-height: 400px; padding-bottom: 20px;
+    }
+
+    /* ── Review card ── */
+    .review-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      min-width: 300px;
+      max-width: 340px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    /* ── Scroll container ── */
+    .scroll-x {
+      display: flex; gap: 16px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0 20px 12px;
+    }
+    .scroll-x::-webkit-scrollbar { display: none; }
+    .scroll-x > * { scroll-snap-align: start; }
+
+    /* ── Stat bar ── */
+    .stat-bar { height: 8px; border-radius: 999px; background: #E8E0D8; overflow: hidden; }
+    .stat-fill {
+      height: 100%; border-radius: 999px; background: var(--forest);
+      width: 0; animation: fillBar 1.5s ease forwards;
+    }
+    @keyframes fillBar { to { width: var(--fill); } }
+
+    /* ── Guarantee badge ── */
+    .guarantee-ring {
+      width: 100px; height: 100px;
+      border: 3px solid var(--forest);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; flex-shrink: 0;
+    }
+
+    /* ── Separator ── */
+    .section-sep {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(26,46,26,0.08), transparent);
+      margin: 0 20px;
+    }
+
+    /* ── Pulse for CTA ── */
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212,160,23,0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(212,160,23,0); }
+    }
+    .cta-pulse { animation: pulse-gold 2s ease infinite; }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ 1. ANNOUNCEMENT BAR ════════ -->
+  <div class="bg-forest text-white text-center py-2.5 px-4">
+    <p class="font-body text-xs tracking-wide">
+      <span class="text-gold font-semibold">OFERTA ESPECIAL</span> — Envío GRATIS en packs de 2+ sobres
+    </p>
+  </div>
+
+
+  <!-- ════════ 2. MINI HEADER ════════ -->
+  <div class="bg-soft-bg py-3 text-center border-b border-blush/30">
+    <a href="index.html" class="font-display text-2xl font-bold text-forest tracking-wide">Florea</a>
+  </div>
+
+
+  <!-- ════════ 3. HERO ════════ -->
+  <section class="bg-soft-bg px-5 pt-8 pb-10">
+    <div class="max-w-lg mx-auto">
+
+      <!-- Product image -->
+      <div class="ph w-full aspect-square rounded-2xl mb-6 fade-up" style="max-width:320px; margin-left:auto; margin-right:auto;">
+        <span>🌸<br>Foto del sobre Florea<br>con gomitas alrededor</span>
+      </div>
+
+      <!-- Stars + reviews -->
+      <div class="text-center fade-up delay-1">
+        <div class="stars text-lg mb-1">★★★★★</div>
+        <p class="text-text-muted text-xs font-medium">4.8/5 — Basado en 2,847+ reseñas verificadas</p>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-forest text-center mt-5 leading-tight fade-up delay-2">
+        "Pensé Que la Vaginosis Bacteriana Era Algo Con lo Que Tendría que Vivir —
+        <span class="text-coral italic">Pero Se Fue en Solo 14 Días</span>"
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-center text-text-muted mt-4 text-sm leading-relaxed fade-up delay-3">
+        La primera gomita con las cepas <strong class="text-forest">GR1 y RC14</strong> — las únicas clínicamente estudiadas para recolonizar la flora vaginal. Sin antibióticos. Sin efectos secundarios.
+      </p>
+
+      <!-- CTA -->
+      <div class="flex justify-center mt-7 fade-up delay-4">
+        <a href="index.html#buy-box" class="cta-btn cta-pulse">
+          PROBAR FLOREA AHORA →
+        </a>
+      </div>
+
+      <!-- Mini social proof -->
+      <p class="text-center text-text-muted text-xs mt-4">♡ Más de 12,000 sobres vendidos en México</p>
+    </div>
+  </section>
+
+
+  <!-- ════════ 4. PRESS LOGOS ════════ -->
+  <section class="bg-white py-5 border-y border-blush/20">
+    <p class="text-center text-text-muted text-[10px] uppercase tracking-widest font-semibold mb-3">Ingredientes respaldados por investigación publicada en:</p>
+    <div class="flex items-center justify-center gap-6 px-5 overflow-x-auto flex-nowrap">
+      <span class="press-logo whitespace-nowrap">Forbes</span>
+      <span class="press-logo whitespace-nowrap" style="font-style:italic">VOGUE</span>
+      <span class="press-logo whitespace-nowrap">ELLE</span>
+      <span class="press-logo whitespace-nowrap" style="font-family:'DM Sans',sans-serif; font-weight:300; letter-spacing:0.15em">marie claire</span>
+      <span class="press-logo whitespace-nowrap" style="font-style:italic">InStyle</span>
+    </div>
+  </section>
+
+
+  <!-- ════════ 5. SOCIAL PROOF STATS ════════ -->
+  <section class="bg-sage/40 py-10 px-5">
+    <div class="max-w-lg mx-auto text-center">
+      <p class="font-display text-2xl font-bold text-forest mb-2">
+        12,000+ Mujeres <span class="text-coral">Rompieron el Ciclo</span> del Desequilibrio Vaginal
+      </p>
+      <p class="text-text-muted text-sm">El olor, las infecciones recurrentes y la incomodidad diaria ya no tienen que ser tu "normal".</p>
+
+      <!-- 3 stats -->
+      <div class="grid grid-cols-3 gap-3 mt-8">
+        <div class="bg-white rounded-xl py-5 px-3 shadow-sm">
+          <p class="font-display text-3xl font-bold text-forest">93%</p>
+          <p class="text-[11px] text-text-muted mt-1">pH balanceado en 14 días</p>
+        </div>
+        <div class="bg-white rounded-xl py-5 px-3 shadow-sm">
+          <p class="font-display text-3xl font-bold text-forest">89%</p>
+          <p class="text-[11px] text-text-muted mt-1">Sin infecciones recurrentes</p>
+        </div>
+        <div class="bg-white rounded-xl py-5 px-3 shadow-sm">
+          <p class="font-display text-3xl font-bold text-forest">95%</p>
+          <p class="text-[11px] text-text-muted mt-1">Mejor olor y frescura</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 6. PROBLEM ════════ -->
+  <section class="bg-soft-bg py-12 px-5">
+    <div class="max-w-lg mx-auto">
+      <!-- Section tag -->
+      <div class="flex justify-center mb-5">
+        <span class="bg-card-bg text-coral text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">El Problema</span>
+      </div>
+
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-center leading-tight mb-4">
+        El Desequilibrio Vaginal Afecta a <span class="text-coral">1 de Cada 3 Mujeres</span> — Y los Antibióticos Solo Empeoran el Ciclo
+      </h2>
+
+      <!-- Woman image -->
+      <div class="ph w-full aspect-[4/3] rounded-2xl my-6">
+        <span>😔<br>Mujer frustrada/preocupada<br>pensativa, iluminación suave</span>
+      </div>
+
+      <div class="space-y-4 text-sm text-text-muted leading-relaxed">
+        <p>
+          Tomas antibióticos. Los síntomas desaparecen. Te sientes aliviada. Pero en semanas — a veces días — <strong class="text-forest">el olor, la incomodidad y la vaginosis bacteriana regresan.</strong>
+        </p>
+        <p>
+          <strong class="text-forest">No es tu culpa.</strong> Los antibióticos matan las bacterias dañinas, sí. Pero también destruyen la colonia de Lactobacillus que <em>protege</em> tu vagina de futuras infecciones.
+        </p>
+        <p>
+          Es como apagar un incendio demoliendo la casa. El fuego se apaga, pero ahora no tienes protección. Y el siguiente incendio es cuestión de tiempo.
+        </p>
+        <p class="text-forest font-medium">
+          El 73% de las mujeres que toman antibióticos para VB experimentan recurrencia dentro de los primeros 3 meses.
+        </p>
+      </div>
+
+      <div class="flex justify-center mt-8">
+        <a href="index.html#buy-box" class="cta-btn">DESCUBRE LA SOLUCIÓN →</a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 7. WHY CURRENT SOLUTIONS FAIL ════════ -->
+  <section class="bg-white py-12 px-5">
+    <div class="max-w-lg mx-auto">
+      <div class="flex justify-center mb-5">
+        <span class="bg-sage text-forest text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">La Verdad</span>
+      </div>
+
+      <h2 class="font-display text-2xl font-bold text-center leading-tight mb-6">
+        ¿Por Qué los Antibióticos, Óvulos y Probióticos Genéricos <span class="text-coral italic">No Funcionan</span> a Largo Plazo?
+      </h2>
+
+      <!-- 3 problem cards -->
+      <div class="space-y-4">
+        <!-- Card 1 -->
+        <div class="bg-soft-bg rounded-2xl p-5">
+          <div class="flex items-start gap-3">
+            <span class="text-coral text-xl mt-0.5">✕</span>
+            <div>
+              <p class="font-semibold text-forest text-sm mb-1">Antibióticos</p>
+              <p class="text-text-muted text-sm">Matan TODO — las bacterias malas Y las buenas. Destruyen la barrera natural que previene la reinfección. Por eso el 73% recae en 3 meses.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-soft-bg rounded-2xl p-5">
+          <div class="flex items-start gap-3">
+            <span class="text-coral text-xl mt-0.5">✕</span>
+            <div>
+              <p class="font-semibold text-forest text-sm mb-1">Óvulos y cremas</p>
+              <p class="text-text-muted text-sm">Alivio temporal de síntomas. Enmascaran el problema sin restaurar la flora. Cuando dejas de usarlos, los síntomas regresan.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-soft-bg rounded-2xl p-5">
+          <div class="flex items-start gap-3">
+            <span class="text-coral text-xl mt-0.5">✕</span>
+            <div>
+              <p class="font-semibold text-forest text-sm mb-1">Probióticos de farmacia</p>
+              <p class="text-text-muted text-sm">Culturelle, Align, y la mayoría usan cepas para el intestino — <strong>no para la vagina</strong>. Sin las cepas GR1 y RC14, tu flora vaginal no recibe protección real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-text-muted text-sm mt-6 italic">
+        "Probé 4 rondas de antibióticos y 3 marcas de probióticos antes de encontrar Florea. Ojalá hubiera sabido antes que no cualquier probiótico funciona para la vagina."
+        <span class="block text-forest font-semibold not-italic mt-1">— Daniela R., CDMX</span>
+      </p>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 8. THE SOLUTION ════════ -->
+  <section class="bg-sage/30 py-12 px-5">
+    <div class="max-w-lg mx-auto">
+      <div class="flex justify-center mb-5">
+        <span class="bg-forest text-white text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">La Solución</span>
+      </div>
+
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-center leading-tight mb-3">
+        2 Gomitas al Día para <span class="text-coral">Restaurar Tu Flora Vaginal</span> — Desde la Raíz
+      </h2>
+      <p class="text-center text-text-muted text-sm mb-8">
+        Las cepas Lactobacillus GR1 y RC14 son las únicas con estudios publicados para recolonización vaginal. Florea las combina con extracto de piña hawaiana en una gomita deliciosa.
+      </p>
+
+      <!-- Product image -->
+      <div class="ph w-full aspect-[4/3] rounded-2xl mb-8">
+        <span>🍍<br>Gomitas Florea saliendo del sobre<br>con rodajas de piña alrededor</span>
+      </div>
+
+      <!-- 3 steps -->
+      <div class="space-y-5">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-forest text-white flex items-center justify-center font-display font-bold text-sm flex-shrink-0">1</div>
+          <div>
+            <p class="font-semibold text-forest text-sm">Sobreviven el Ácido Estomacal</p>
+            <p class="text-text-muted text-sm">Las cepas GR1 y RC14 tienen encapsulación natural que las protege. Llegan vivas donde importa — a diferencia del 90% de probióticos que mueren en el estómago.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-forest text-white flex items-center justify-center font-display font-bold text-sm flex-shrink-0">2</div>
+          <div>
+            <p class="font-semibold text-forest text-sm">Recolonizan la Flora Vaginal</p>
+            <p class="text-text-muted text-sm">No solo "apoyan" — migran del intestino al tracto vaginal y reconstruyen la barrera de Lactobacillus que los antibióticos destruyeron.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-forest text-white flex items-center justify-center font-display font-bold text-sm flex-shrink-0">3</div>
+          <div>
+            <p class="font-semibold text-forest text-sm">Protección Continua 24/7</p>
+            <p class="text-text-muted text-sm">Con uso diario, las cepas mantienen un pH ácido protector que dificulta el crecimiento de bacterias causantes de VB, olor e infecciones.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-8">
+        <a href="index.html#buy-box" class="cta-btn cta-pulse">QUIERO RESTAURAR MI FLORA →</a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 9. COMPARISON TABLE ════════ -->
+  <section class="bg-soft-bg py-12 px-5">
+    <div class="max-w-lg mx-auto">
+      <h2 class="font-display text-2xl font-bold text-center mb-8">La Diferencia <span class="text-coral">Florea</span></h2>
+
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Florea column -->
+        <div class="bg-white rounded-2xl p-5 border-2 border-forest">
+          <p class="font-display font-bold text-forest text-center mb-4">Florea</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2"><span class="text-green-600 text-sm">✓</span><span class="text-xs">Sobrevive el ácido estomacal</span></div>
+            <div class="flex items-center gap-2"><span class="text-green-600 text-sm">✓</span><span class="text-xs">Ataca la causa raíz</span></div>
+            <div class="flex items-center gap-2"><span class="text-green-600 text-sm">✓</span><span class="text-xs">Se queda y coloniza</span></div>
+            <div class="flex items-center gap-2"><span class="text-green-600 text-sm">✓</span><span class="text-xs">2 gomitas deliciosas</span></div>
+            <div class="flex items-center gap-2"><span class="text-green-600 text-sm">✓</span><span class="text-xs">Solución a largo plazo</span></div>
+            <div class="flex items-center gap-2"><span class="text-green-600 text-sm">✓</span><span class="text-xs">Cepas GR1 + RC14</span></div>
+          </div>
+          <!-- Florea product -->
+          <div class="ph w-full aspect-square rounded-xl mt-4" style="font-size:11px">
+            <span>🌿<br>Sobre Florea<br>fondo limpio</span>
+          </div>
+        </div>
+
+        <!-- Others column -->
+        <div class="bg-white rounded-2xl p-5 border border-gray-200 opacity-70">
+          <p class="font-display font-bold text-gray-400 text-center mb-4">Otros</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2"><span class="text-coral text-sm">✕</span><span class="text-xs text-gray-400">Muere antes de funcionar</span></div>
+            <div class="flex items-center gap-2"><span class="text-coral text-sm">✕</span><span class="text-xs text-gray-400">Enmascara síntomas</span></div>
+            <div class="flex items-center gap-2"><span class="text-coral text-sm">✕</span><span class="text-xs text-gray-400">Se elimina rápido</span></div>
+            <div class="flex items-center gap-2"><span class="text-coral text-sm">✕</span><span class="text-xs text-gray-400">3-4 cápsulas diarias</span></div>
+            <div class="flex items-center gap-2"><span class="text-coral text-sm">✕</span><span class="text-xs text-gray-400">Alivio temporal</span></div>
+            <div class="flex items-center gap-2"><span class="text-coral text-sm">✕</span><span class="text-xs text-gray-400">Cepas genéricas</span></div>
+          </div>
+          <!-- Generic product -->
+          <div class="ph w-full aspect-square rounded-xl mt-4" style="font-size:11px; filter:grayscale(100%) opacity(0.5);">
+            <span>💊<br>Probiótico genérico<br>en cápsula</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 10. EMBEDDED BUY BOX ════════ -->
+  <section class="bg-white py-12 px-5" id="pr_desktop">
+    <div class="max-w-lg mx-auto">
+      <h2 class="font-display text-2xl font-bold text-center mb-2">Elige Tu Pack</h2>
+      <p class="text-center text-text-muted text-sm mb-6">Envío GRATIS en packs de 2+</p>
+
+      <div class="space-y-4">
+        <!-- 1 sobre -->
+        <div class="bundle-card">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-forest">1 Sobre — Suministro 1 Mes</p>
+              <p class="text-text-muted text-xs mt-0.5">+ $99 MXN envío</p>
+            </div>
+            <div class="text-right">
+              <p class="font-display font-bold text-xl text-forest">$549</p>
+              <p class="text-text-muted text-[10px]">MXN</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2+1 sobres -->
+        <div class="bundle-card popular active">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-forest">Compra 2 + 1 GRATIS</p>
+              <p class="text-coral text-xs font-semibold mt-0.5">Envío GRATIS — Ahorra $748</p>
+            </div>
+            <div class="text-right">
+              <p class="font-display font-bold text-xl text-forest">$1,099</p>
+              <p class="text-text-muted text-[10px] line-through">$1,747 MXN</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3+2 sobres -->
+        <div class="bundle-card">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-forest">Compra 3 + 2 GRATIS</p>
+              <p class="text-coral text-xs font-semibold mt-0.5">Envío GRATIS — Ahorra $1,246</p>
+            </div>
+            <div class="text-right">
+              <p class="font-display font-bold text-xl text-forest">$1,499</p>
+              <p class="text-text-muted text-[10px] line-through">$2,745 MXN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-6">
+        <a href="index.html#buy-box" class="cta-btn cta-pulse">ORDENAR AHORA →</a>
+      </div>
+
+      <!-- Trust row -->
+      <div class="flex items-center justify-center gap-4 mt-5 flex-wrap">
+        <span class="text-[11px] text-text-muted flex items-center gap-1">🔒 Pago Seguro</span>
+        <span class="text-[11px] text-text-muted flex items-center gap-1">🚚 Envío Rápido</span>
+        <span class="text-[11px] text-text-muted flex items-center gap-1">✓ Garantía 30 Días</span>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 11. REVIEWS ════════ -->
+  <section class="bg-soft-bg py-12 px-0">
+    <div class="max-w-lg mx-auto px-5 mb-6">
+      <h2 class="font-display text-2xl font-bold text-center mb-1">Resultados Reales, Verificados</h2>
+      <p class="text-center text-text-muted text-sm">4.8/5 basado en 2,847 reseñas</p>
+    </div>
+
+    <div class="scroll-x">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="stars text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-forest leading-relaxed mb-3">"Llevaba 2 años con VB recurrente. Antibióticos, óvulos, de todo. Con Florea en 2 semanas sentí la diferencia. Ya llevo 3 meses sin un solo episodio. <strong>Me cambió la vida.</strong>"</p>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-blush flex items-center justify-center text-sm font-semibold text-forest">M</div>
+          <div>
+            <p class="font-semibold text-xs text-forest">Marina G.</p>
+            <p class="text-[10px] text-text-muted">Guadalajara, Jal. — Compra verificada</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="stars text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-forest leading-relaxed mb-3">"Mi ginecóloga me dijo que buscara probióticos con GR1 y RC14. Florea es el único que los tiene en gomita. Saben deliciosas y por fin mi pH está estable."</p>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-sage flex items-center justify-center text-sm font-semibold text-forest">V</div>
+          <div>
+            <p class="font-semibold text-xs text-forest">Valentina R.</p>
+            <p class="text-[10px] text-text-muted">Monterrey, N.L. — Compra verificada</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="stars text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-forest leading-relaxed mb-3">"Después de terminar antibióticos, empecé con Florea inmediatamente como me recomendaron. Han pasado 4 meses y CERO recurrencia. Es la primera vez en 3 años. No puedo creerlo."</p>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-cream flex items-center justify-center text-sm font-semibold text-forest">A</div>
+          <div>
+            <p class="font-semibold text-xs text-forest">Andrea L.</p>
+            <p class="text-[10px] text-text-muted">CDMX — Compra verificada</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="stars text-sm mb-2">★★★★☆</div>
+        <p class="text-sm text-forest leading-relaxed mb-3">"Lo uso por el tema del olor — siempre me preocupaba en la intimidad. A la tercera semana noté un cambio real. Mi pareja también lo notó. El sabor a piña es un plus enorme."</p>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-card-bg flex items-center justify-center text-sm font-semibold text-forest">S</div>
+          <div>
+            <p class="font-semibold text-xs text-forest">Sofía P.</p>
+            <p class="text-[10px] text-text-muted">Querétaro, Qro. — Compra verificada</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="stars text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-forest leading-relaxed mb-3">"Soy escéptica por naturaleza. Pero investigué las cepas y Florea tiene las correctas. Lo compré, lo probé 1 mes, y los resultados hablan solos. Mi vagina por fin se siente en balance."</p>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-sage flex items-center justify-center text-sm font-semibold text-forest">L</div>
+          <div>
+            <p class="font-semibold text-xs text-forest">Lucía M.</p>
+            <p class="text-[10px] text-text-muted">Puebla, Pue. — Compra verificada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 12. GUARANTEE ════════ -->
+  <section class="bg-white py-12 px-5">
+    <div class="max-w-lg mx-auto flex flex-col items-center text-center">
+      <div class="guarantee-ring mb-5">
+        <span class="font-display font-bold text-2xl text-forest leading-none">30</span>
+        <span class="text-[9px] text-text-muted font-semibold uppercase tracking-wider">días</span>
+      </div>
+
+      <h2 class="font-display text-2xl font-bold mb-3">Garantía de Satisfacción de 30 Días</h2>
+      <p class="text-text-muted text-sm leading-relaxed max-w-md">
+        Si no ves resultados en los primeros 30 días, te devolvemos tu dinero. Sin preguntas complicadas. Tu satisfacción es nuestra prioridad — por eso más de 12,000 mujeres confían en Florea.
+      </p>
+      <p class="text-xs text-text-muted mt-3 italic">Aplican términos y condiciones. Consulta nuestra política de devoluciones.</p>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 13. TESTIMONIAL FEATURE ════════ -->
+  <section class="bg-sage/20 py-12 px-5">
+    <div class="max-w-lg mx-auto">
+      <div class="flex justify-center mb-5">
+        <span class="bg-forest text-white text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Historia Real</span>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-sm">
+        <!-- Avatar -->
+        <div class="ph w-16 h-16 rounded-full mx-auto mb-4" style="font-size:10px">
+          <span>👩🏻<br>UGC</span>
+        </div>
+
+        <div class="stars text-sm text-center mb-3">★★★★★</div>
+
+        <blockquote class="text-center text-sm text-forest leading-relaxed italic mb-4">
+          "Empecé a tomar Florea el día que terminé mi cuarta ronda de antibióticos. Mi doctora me dijo que probara probióticos vaginales, pero ninguno tenía las cepas correctas — hasta que encontré estas gomitas.
+          <br><br>
+          Ya van 5 meses sin VB. <strong class="not-italic">Cinco meses.</strong> No había logrado pasar de 3 semanas sin recurrencia en los últimos 2 años.
+          <br><br>
+          Si estás leyendo esto y estás cansada del ciclo, pruébalas. Ojalá alguien me lo hubiera dicho antes."
+        </blockquote>
+
+        <p class="text-center font-semibold text-sm text-forest">Daniela Herrera</p>
+        <p class="text-center text-[11px] text-text-muted">32 años — León, Guanajuato</p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 14. SCIENCE / DOCTOR ════════ -->
+  <section class="bg-white py-12 px-5">
+    <div class="max-w-lg mx-auto">
+      <div class="flex justify-center mb-5">
+        <span class="bg-sage text-forest text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Respaldo Científico</span>
+      </div>
+
+      <h2 class="font-display text-xl font-bold text-center mb-6">
+        Las Cepas GR1 y RC14 — Respaldadas por +25 Años de Investigación
+      </h2>
+
+      <div class="bg-sage/40 rounded-2xl p-6">
+        <div class="flex items-start gap-4">
+          <div class="ph w-14 h-14 rounded-full flex-shrink-0" style="font-size:9px">
+            <span>👨‍⚕️</span>
+          </div>
+          <div>
+            <p class="text-sm text-forest leading-relaxed">
+              "Las cepas Lactobacillus rhamnosus GR1 y Lactobacillus reuteri RC14 son las más estudiadas del mundo para la salud vaginal. Su capacidad de migrar del intestino al tracto vaginal y restaurar la flora está documentada en más de 30 estudios clínicos publicados."
+            </p>
+            <p class="text-xs text-text-muted mt-3 font-semibold">— Basado en publicaciones de Dr. Gregor Reid, pionero en probióticos vaginales</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 mt-6">
+        <div class="bg-soft-bg rounded-xl p-4 text-center">
+          <p class="font-display font-bold text-2xl text-forest">30+</p>
+          <p class="text-[10px] text-text-muted mt-1">Estudios clínicos publicados</p>
+        </div>
+        <div class="bg-soft-bg rounded-xl p-4 text-center">
+          <p class="font-display font-bold text-2xl text-forest">25+</p>
+          <p class="text-[10px] text-text-muted mt-1">Años de investigación</p>
+        </div>
+        <div class="bg-soft-bg rounded-xl p-4 text-center">
+          <p class="font-display font-bold text-2xl text-forest">2</p>
+          <p class="text-[10px] text-text-muted mt-1">Cepas con evidencia vaginal real</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 15. FAQs ════════ -->
+  <section class="bg-soft-bg py-12 px-5">
+    <div class="max-w-lg mx-auto">
+      <h2 class="font-display text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
+
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq1" class="faq-toggle" />
+        <label for="faq1" class="faq-label">¿Cuánto tiempo tarda en hacer efecto?</label>
+        <div class="faq-content">
+          <p class="text-sm text-text-muted leading-relaxed">La mayoría de nuestras clientas reportan cambios notables entre la segunda y tercera semana de uso continuo. Los estudios clínicos con las cepas GR1 y RC14 muestran resultados significativos a partir del día 14. Para resultados óptimos y duraderos, recomendamos un uso mínimo de 3 meses.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq2" class="faq-toggle" />
+        <label for="faq2" class="faq-label">¿Puedo tomarlo con antibióticos?</label>
+        <div class="faq-content">
+          <p class="text-sm text-text-muted leading-relaxed">Sí, puedes comenzar a tomar Florea durante o inmediatamente después de terminar tu tratamiento con antibióticos. De hecho, el momento ideal para iniciar es justo al terminar los antibióticos, cuando tu flora vaginal necesita ser reconstruida. Las cepas GR1 y RC14 han sido estudiadas específicamente en este contexto.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq3" class="faq-toggle" />
+        <label for="faq3" class="faq-label">¿En qué se diferencia de otros probióticos?</label>
+        <div class="faq-content">
+          <p class="text-sm text-text-muted leading-relaxed">La mayoría de los probióticos del mercado usan cepas estudiadas para la salud intestinal (Lactobacillus acidophilus, Bifidobacterium, etc.), no para la vagina. Florea contiene específicamente Lactobacillus rhamnosus GR1 y Lactobacillus reuteri RC14 — las dos únicas cepas con investigación publicada sobre migración intestino-vaginal y recolonización de la flora vaginal.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq4" class="faq-toggle" />
+        <label for="faq4" class="faq-label">¿A qué saben las gomitas?</label>
+        <div class="faq-content">
+          <p class="text-sm text-text-muted leading-relaxed">Sabor piña tropical. Usamos extracto de piña hawaiana real (no saborizante artificial), que además aporta bromelina — una enzima que apoya el pH vaginal de forma natural. Nuestras clientas dicen que es como comer un dulce, no un suplemento.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq5" class="faq-toggle" />
+        <label for="faq5" class="faq-label">¿Cuántas gomitas debo tomar al día?</label>
+        <div class="faq-content">
+          <p class="text-sm text-text-muted leading-relaxed">2 gomitas al día, preferiblemente por la mañana. Cada sobre contiene 60 gomitas — un suministro para 30 días. No necesitas refrigeración.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq6" class="faq-toggle" />
+        <label for="faq6" class="faq-label">¿Cómo funciona la garantía de 30 días?</label>
+        <div class="faq-content">
+          <p class="text-sm text-text-muted leading-relaxed">Si no estás satisfecha con tu compra, puedes solicitar un reembolso dentro de los 30 días posteriores a la recepción de tu pedido. Consulta nuestra página de devoluciones para conocer los detalles completos del proceso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-sep"></div>
+
+
+  <!-- ════════ 16. FINAL CTA ════════ -->
+  <section class="bg-forest py-14 px-5">
+    <div class="max-w-lg mx-auto text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+        ¿Lista para Romper el Ciclo?
+      </h2>
+      <p class="text-blush/80 text-sm mb-6 max-w-md mx-auto">
+        Más de 12,000 mujeres ya recuperaron su balance vaginal con Florea. Tú puedes ser la siguiente.
+      </p>
+
+      <a href="index.html#buy-box" class="cta-btn cta-pulse inline-block">
+        ORDENAR FLOREA AHORA →
+      </a>
+
+      <div class="flex items-center justify-center gap-4 mt-5 flex-wrap">
+        <span class="text-[11px] text-blush/60 flex items-center gap-1">🔒 Pago Seguro</span>
+        <span class="text-[11px] text-blush/60 flex items-center gap-1">🚚 Envío Rápido</span>
+        <span class="text-[11px] text-blush/60 flex items-center gap-1">✓ Garantía 30 Días</span>
+      </div>
+
+      <p class="text-blush/40 text-[10px] mt-6">
+        Florea no es un medicamento. No pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.
+        Consulta a tu profesional de salud antes de iniciar cualquier suplemento.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ════════ MINI FOOTER ════════ -->
+  <footer class="bg-forest py-6 px-5 border-t border-white/10">
+    <div class="max-w-lg mx-auto text-center">
+      <p class="font-display text-white text-lg font-bold mb-2">Florea</p>
+      <div class="flex items-center justify-center gap-4 flex-wrap text-[11px] text-blush/50">
+        <a href="devoluciones.html" class="hover:text-blush transition-colors">Devoluciones</a>
+        <a href="privacidad.html" class="hover:text-blush transition-colors">Privacidad</a>
+        <a href="terminos.html" class="hover:text-blush transition-colors">Términos</a>
+        <a href="contacto.html" class="hover:text-blush transition-colors">Contacto</a>
+      </div>
+      <p class="text-blush/30 text-[10px] mt-3">© 2026 Florea. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+
+  <!-- ════════ STICKY CTA BAR (mobile) ════════ -->
+  <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-blush/20 py-3 px-4 z-50 transform translate-y-full transition-transform duration-300 md:hidden">
+    <a href="index.html#buy-box" class="cta-btn block text-center text-sm py-3">
+      PROBAR FLOREA — DESDE $549 MXN →
+    </a>
+  </div>
+
+  <script>
+    // Show sticky CTA after scrolling past hero
+    const stickyCta = document.getElementById('sticky-cta');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 600) {
+        stickyCta.style.transform = 'translateY(0)';
+      } else {
+        stickyCta.style.transform = 'translateY(100%)';
+      }
+      lastScroll = scrollY;
+    }, { passive: true });
+
+    // Bundle card selection
+    document.querySelectorAll('.bundle-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.bundle-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
