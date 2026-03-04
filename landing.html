@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florae — Cuida Tu Salud Vaginal De Forma Natural</title>
+  <meta name="description" content="Probióticos con cepas GR1 y RC14 clínicamente estudiadas. Gomitas sabor Piña Tropical para frescura duradera, armonía de pH y balance de flora vaginal." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#1A2E1A',
+            'forest-hover': '#2A3E2A',
+            blush: '#F4C2C2',
+            cream: '#F5E6C8',
+            'soft-bg': '#FFF5F5',
+            'card-bg': '#FDE8E8',
+            sage: '#E8F0E8',
+            'text-dark': '#1A2E1A',
+            'text-muted': '#8B6B6B',
+            gold: '#D4A017',
+            'gold-hover': '#B8900F',
+            coral: '#E85D3A',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --forest: #1A2E1A;
+      --blush: #F4C2C2;
+      --cream: #F5E6C8;
+      --soft-bg: #FFF5F5;
+      --card-bg: #FDE8E8;
+      --sage: #E8F0E8;
+      --gold: #D4A017;
+      --coral: #E85D3A;
+      --muted: #8B6B6B;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--soft-bg);
+      color: var(--forest);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: -0.03em;
+    }
+
+    /* ── Placeholder images ── */
+    .ph {
+      background: linear-gradient(135deg, #F4C2C2 0%, #FDE8E8 50%, #E8F0E8 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; text-align: center;
+      font-family: 'DM Sans', sans-serif; color: var(--muted); font-size: 13px;
+    }
+    .ph::after {
+      content: ''; position: absolute; inset: 10px;
+      border: 2px dashed rgba(139,107,107,0.2); border-radius: inherit;
+      pointer-events: none;
+    }
+
+    /* ── CTA button (gold, mynuora-style) ── */
+    .cta-gold {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--gold); color: var(--forest);
+      font-family: 'DM Sans', sans-serif; font-weight: 700;
+      font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 16px 32px; border-radius: 999px; border: none;
+      cursor: pointer; text-decoration: none; width: 100%;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 16px rgba(212,160,23,0.3);
+    }
+    .cta-gold:hover { background: #B8900F; }
+    .cta-gold:active { transform: translateY(1px); }
+
+    /* ── Announcement ── */
+    .announcement-msg { display: none; }
+    .announcement-msg.active { display: flex; }
+
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid rgba(244,194,194,0.4); }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 0; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px;
+    }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+      color: var(--muted); font-size: 13px; line-height: 1.7;
+    }
+    .faq-a.open { max-height: 300px; padding-bottom: 16px; }
+    .faq-icon { transition: transform 0.3s; font-size: 20px; color: var(--muted); }
+    .faq-icon.rotated { transform: rotate(45deg); }
+
+    /* ── Marquee ── */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex; gap: 0; width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+
+    /* ── UGC auto-scroll ── */
+    @keyframes ugc-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ugc-track {
+      display: flex; gap: 12px; width: max-content;
+      animation: ugc-scroll 30s linear infinite;
+    }
+    .ugc-track:hover { animation-play-state: paused; }
+
+    /* ── Reviews carousel ── */
+    .reviews-track {
+      display: flex; gap: 16px; overflow-x: auto;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      scroll-snap-type: x mandatory; padding-bottom: 8px;
+    }
+    .reviews-track::-webkit-scrollbar { display: none; }
+    .review-card {
+      flex-shrink: 0; width: 280px; scroll-snap-align: start;
+      background: #fff; border-radius: 16px; padding: 20px;
+      box-shadow: 0 2px 12px rgba(26,46,26,0.06);
+      border: 1px solid rgba(244,194,194,0.2);
+    }
+
+    /* ── Stats alternating colors ── */
+    .stat-bar:nth-child(1) { background: var(--gold); }
+    .stat-bar:nth-child(2) { background: var(--sage); }
+    .stat-bar:nth-child(3) { background: var(--cream); }
+    .stat-bar:nth-child(4) { background: var(--gold); }
+
+    /* ── Trust badge carousel ── */
+    .trust-scroll {
+      display: flex; gap: 16px; overflow-x: auto;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+    .trust-scroll::-webkit-scrollbar { display: none; }
+
+    /* ── Video placeholder ── */
+    .video-ph {
+      background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.5); font-size: 12px;
+      position: relative; border-radius: 16px; overflow: hidden;
+    }
+    .video-ph .play-btn {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; position: absolute; z-index: 2;
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 1. ANNOUNCEMENT BAR                         -->
+<!-- ════════════════════════════════════════════ -->
+<div id="announcement" class="bg-forest text-white text-xs overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="announcement-msg active items-center justify-center gap-3 py-2 text-center">
+      <span class="font-body font-semibold tracking-wider uppercase">Oferta de Lanzamiento</span>
+      <span class="flex items-center gap-1 font-body font-bold">
+        <span class="bg-white/20 rounded px-1.5 py-0.5 text-[11px]" id="t-hrs">00</span>
+        <span>:</span>
+        <span class="bg-white/20 rounded px-1.5 py-0.5 text-[11px]" id="t-min">00</span>
+        <span>:</span>
+        <span class="bg-white/20 rounded px-1.5 py-0.5 text-[11px]" id="t-sec">00</span>
+      </span>
+    </div>
+    <div class="announcement-msg items-center justify-center py-2 text-center">
+      <span>&#127800; Ahorra hasta 33% en el Pack de 3 &mdash; Env&iacute;o gratis</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 2. STICKY HEADER                            -->
+<!-- ════════════════════════════════════════════ -->
+<header class="bg-soft-bg/95 backdrop-blur-sm border-b border-blush/30 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+    <button class="p-2 text-forest" aria-label="Men&uacute;">
+      <svg width="20" height="14" fill="none"><rect width="20" height="2" rx="1" fill="currentColor"/><rect y="6" width="14" height="2" rx="1" fill="currentColor"/><rect y="12" width="20" height="2" rx="1" fill="currentColor"/></svg>
+    </button>
+    <a href="index.html" class="absolute left-1/2 -translate-x-1/2">
+      <span class="font-display text-forest font-bold tracking-[0.12em] text-sm uppercase">Florae</span>
+    </a>
+    <a href="index.html#buy-box" class="p-2 text-forest relative" aria-label="Carrito">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 3. HERO                                     -->
+<!-- ════════════════════════════════════════════ -->
+<section class="px-4 pt-6 pb-10 bg-soft-bg">
+  <div class="max-w-md mx-auto">
+    <!-- Product hero image -->
+    <div class="ph rounded-2xl aspect-[4/5] mb-5" style="max-height:420px;">
+      <div class="p-6">
+        <div class="text-4xl mb-2">&#127800;</div>
+        <p class="font-semibold text-forest text-sm">Foto hero: mujer comiendo gomita</p>
+        <p class="text-xs mt-1">Con producto Florae visible</p>
+      </div>
+    </div>
+
+    <!-- Stars + reviews -->
+    <div class="flex items-center justify-center gap-2 mb-3">
+      <span class="text-gold text-base">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="font-body text-sm text-forest font-semibold">4.8/5</span>
+      <span class="font-body text-sm text-text-muted">|</span>
+      <span class="font-body text-sm text-text-muted">2,847+ rese&ntilde;as</span>
+    </div>
+
+    <!-- H1 -->
+    <h1 class="font-display text-3xl text-forest text-center leading-tight mb-3">
+      <em class="italic text-coral">Cuida</em> Tu Salud Vaginal<br />De Forma Natural
+    </h1>
+
+    <p class="font-body text-sm text-text-muted text-center mb-6 max-w-xs mx-auto">
+      Descubre Florae, una mezcla probi&oacute;tica natural dise&ntilde;ada para eliminar el mal olor, la resequedad y la irritaci&oacute;n.
+    </p>
+
+    <!-- CTA -->
+    <a href="index.html#buy-box" class="cta-gold mb-3">
+      Reclamar Oferta Especial &rarr;
+    </a>
+    <p class="font-body text-xs text-text-muted text-center flex items-center justify-center gap-1.5">
+      <span class="text-coral">&#9825;</span> M&aacute;s de 12,000 Packs Vendidos
+    </p>
+
+    <!-- Featured review card -->
+    <div class="mt-6 bg-white rounded-2xl p-5 border border-blush/30 shadow-sm">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-full bg-blush flex items-center justify-center text-lg flex-shrink-0">&#128105;</div>
+        <div>
+          <span class="font-body font-semibold text-forest text-sm">Mariana T.</span>
+          <div class="text-gold text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+      </div>
+      <p class="font-body text-xs text-text-muted leading-relaxed">
+        &ldquo;A los 42, la menopausia hab&iacute;a matado mi confianza. Resequedad, olor, cero ganas. Dos semanas con estas gomitas: todo cambi&oacute;. Mi esposo no para de preguntarme qu&eacute; hice diferente.&rdquo;
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 4. PRESS LOGOS                              -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-8 px-4 bg-white border-t border-b border-blush/20">
+  <div class="max-w-md mx-auto text-center">
+    <p class="font-body text-[10px] font-semibold text-text-muted uppercase tracking-[0.15em] mb-5 flex items-center justify-center gap-3">
+      <span class="w-8 h-px bg-text-muted/30"></span>
+      Mencionado en:
+      <span class="w-8 h-px bg-text-muted/30"></span>
+    </p>
+    <div class="flex items-center justify-center gap-6 flex-wrap opacity-50">
+      <span class="font-body font-bold text-lg text-forest tracking-[0.15em] uppercase" style="font-size:13px;">ELLE</span>
+      <span class="font-display italic font-bold text-xl text-forest">marie claire</span>
+      <span class="font-display font-bold text-lg text-forest tracking-wider">Forbes</span>
+      <span class="font-display italic font-bold text-xl text-forest tracking-wide">VOGUE</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 5. WHY IT WORKS                             -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-12 px-4 bg-cream/30">
+  <div class="max-w-md mx-auto">
+    <h2 class="font-display text-2xl text-forest text-center mb-8">&iquest;Por Qu&eacute; Funciona?</h2>
+
+    <div class="grid grid-cols-2 gap-3 mb-8">
+      <div class="bg-white rounded-2xl p-4 text-center border border-blush/20 shadow-sm">
+        <div class="w-12 h-12 mx-auto rounded-full bg-sage flex items-center justify-center text-xl mb-3">&#127829;</div>
+        <h3 class="font-display text-forest font-semibold text-sm uppercase tracking-wide mb-2">El Secreto del Sabor</h3>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">Los mismos compuestos de pi&ntilde;a que equilibran tu pH tambi&eacute;n endulzan naturalmente tu sabor y aroma &iacute;ntimo.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 text-center border border-blush/20 shadow-sm">
+        <div class="w-12 h-12 mx-auto rounded-full bg-sage flex items-center justify-center text-xl mb-3">&#128260;</div>
+        <h3 class="font-display text-forest font-semibold text-sm uppercase tracking-wide mb-2">Protocolo Reset</h3>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">A diferencia de otros productos que enmascaran, nuestra f&oacute;rmula realmente resetea tu flora al balance perfecto.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 text-center border border-blush/20 shadow-sm">
+        <div class="w-12 h-12 mx-auto rounded-full bg-sage flex items-center justify-center text-xl mb-3">&#127821;</div>
+        <h3 class="font-display text-forest font-semibold text-sm uppercase tracking-wide mb-2">La Magia de la Pi&ntilde;a</h3>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">Las enzimas frescas de pi&ntilde;a destruyen bacterias da&ntilde;inas mientras alimentan la flora buena &mdash; algo que los probi&oacute;ticos normales no pueden hacer.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 text-center border border-blush/20 shadow-sm">
+        <div class="w-12 h-12 mx-auto rounded-full bg-sage flex items-center justify-center text-xl mb-3">&#128737;&#65039;</div>
+        <h3 class="font-display text-forest font-semibold text-sm uppercase tracking-wide mb-2">Escudo pH 24h</h3>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">Nuestra cepa probi&oacute;tica crea una barrera protectora que mantiene el pH perfecto durante 24 horas &mdash; incluso durante el ejercicio o la intimidad.</p>
+      </div>
+    </div>
+
+    <a href="index.html#buy-box" class="cta-gold mb-2">Reclamar Oferta Especial &rarr;</a>
+    <p class="font-body text-xs text-text-muted text-center flex items-center justify-center gap-1.5">
+      <span class="text-coral">&#9825;</span> M&aacute;s de 12,000 Packs Vendidos
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 6. SOCIAL PROOF + UGC AUTO-SCROLL           -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-10 bg-soft-bg overflow-hidden">
+  <div class="max-w-md mx-auto px-4 mb-6">
+    <h2 class="font-display text-2xl text-forest text-center leading-tight">
+      12,000+ mujeres aman<br />Florae &#127800;
+    </h2>
+  </div>
+  <div class="overflow-hidden">
+    <div class="ugc-track">
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 1</p></div>
+      </div>
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 2</p></div>
+      </div>
+      <div class="rounded-2xl flex-shrink-0 w-36 h-48 bg-card-bg flex items-center justify-center">
+        <div class="text-center p-3"><div class="text-3xl mb-1">&#127829;</div><p class="font-body text-[10px] text-text-muted">Sabor Pi&ntilde;a Tropical</p></div>
+      </div>
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 3</p></div>
+      </div>
+      <div class="rounded-2xl flex-shrink-0 w-36 h-48 bg-sage flex items-center justify-center">
+        <div class="text-center p-3"><div class="font-display text-forest text-2xl font-bold">4.8&#9733;</div><p class="font-body text-[10px] text-text-muted mt-1">2,847+ rese&ntilde;as</p></div>
+      </div>
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 4</p></div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 1</p></div>
+      </div>
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 2</p></div>
+      </div>
+      <div class="rounded-2xl flex-shrink-0 w-36 h-48 bg-card-bg flex items-center justify-center">
+        <div class="text-center p-3"><div class="text-3xl mb-1">&#127829;</div><p class="font-body text-[10px] text-text-muted">Sabor Pi&ntilde;a Tropical</p></div>
+      </div>
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 3</p></div>
+      </div>
+      <div class="rounded-2xl flex-shrink-0 w-36 h-48 bg-sage flex items-center justify-center">
+        <div class="text-center p-3"><div class="font-display text-forest text-2xl font-bold">4.8&#9733;</div><p class="font-body text-[10px] text-text-muted mt-1">2,847+ rese&ntilde;as</p></div>
+      </div>
+      <div class="ph rounded-2xl flex-shrink-0 w-36 h-48">
+        <div><div class="text-2xl mb-1">&#128248;</div><p class="text-[10px]">UGC 4</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 7. STATS + VIDEO TESTIMONIALS               -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-12 px-4 bg-white">
+  <div class="max-w-md mx-auto">
+    <h2 class="font-display text-2xl text-forest text-center mb-2">Conoce a las Reinas<br />de la Frescura</h2>
+    <p class="font-body text-xs text-text-muted text-center mb-8">Resultados reales de mujeres reales con Florae</p>
+
+    <!-- Stats -->
+    <div class="space-y-3 mb-8">
+      <div class="stat-bar rounded-xl px-5 py-4 flex items-center gap-4">
+        <span class="font-display text-forest text-3xl font-bold leading-none">93%</span>
+        <span class="font-body text-sm text-forest">de mujeres report&oacute; su pH equilibrado</span>
+      </div>
+      <div class="stat-bar rounded-xl px-5 py-4 flex items-center gap-4">
+        <span class="font-display text-forest text-3xl font-bold leading-none">89%</span>
+        <span class="font-body text-sm text-forest">de mujeres report&oacute; sin infecciones vaginales</span>
+      </div>
+      <div class="stat-bar rounded-xl px-5 py-4 flex items-center gap-4">
+        <span class="font-display text-forest text-3xl font-bold leading-none">91%</span>
+        <span class="font-body text-sm text-forest">de mujeres report&oacute; s&iacute;ntomas de VB eliminados en 4 meses</span>
+      </div>
+      <div class="stat-bar rounded-xl px-5 py-4 flex items-center gap-4">
+        <span class="font-display text-forest text-3xl font-bold leading-none">95%</span>
+        <span class="font-body text-sm text-forest">de mujeres report&oacute; un mejor olor vaginal</span>
+      </div>
+    </div>
+
+    <!-- Video UGC placeholders -->
+    <div class="flex gap-3 overflow-x-auto pb-2" style="scrollbar-width:none;">
+      <div class="video-ph flex-shrink-0 w-44 h-64 rounded-2xl">
+        <div class="play-btn">&#9654;</div>
+        <p class="absolute bottom-3 left-3 right-3 text-white/60 text-[10px] font-body z-10">Video UGC &mdash; Testimonio 1</p>
+      </div>
+      <div class="video-ph flex-shrink-0 w-44 h-64 rounded-2xl">
+        <div class="play-btn">&#9654;</div>
+        <p class="absolute bottom-3 left-3 right-3 text-white/60 text-[10px] font-body z-10">Video UGC &mdash; Testimonio 2</p>
+      </div>
+      <div class="video-ph flex-shrink-0 w-44 h-64 rounded-2xl">
+        <div class="play-btn">&#9654;</div>
+        <p class="absolute bottom-3 left-3 right-3 text-white/60 text-[10px] font-body z-10">Video UGC &mdash; Testimonio 3</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8">
+      <a href="index.html#buy-box" class="cta-gold mb-2">Reclamar Oferta Especial &rarr;</a>
+      <p class="font-body text-xs text-text-muted text-center flex items-center justify-center gap-1.5">
+        <span class="text-coral">&#9825;</span> M&aacute;s de 12,000 Packs Vendidos
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 8. REVIEWS CAROUSEL                         -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-12 px-4 bg-sage/50">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-6">
+      <h2 class="font-display text-2xl text-forest mb-1">Lo que dicen nuestras 12,000+ clientas</h2>
+      <div class="flex items-center justify-center gap-2">
+        <span class="text-gold text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="font-body font-bold text-forest">4.8 / 5</span>
+      </div>
+      <p class="font-body text-xs text-text-muted mt-1">basado en 2,847 rese&ntilde;as verificadas</p>
+    </div>
+
+    <div class="reviews-track">
+      <div class="review-card">
+        <div class="text-gold text-xs mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs font-bold text-forest mb-2">c&oacute;mo viv&iacute;amos antes sin esto</p>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">&ldquo;Mi novio literalmente hizo doble toma y me pregunt&oacute; si hab&iacute;a hecho algo diferente. S&iacute;, s&iacute; lo hice. Digamos que la pi&ntilde;a funciona de verdad... en todos los sentidos.&rdquo;</p>
+        <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Ana D., CDMX</p>
+      </div>
+      <div class="review-card">
+        <div class="text-gold text-xs mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs font-bold text-forest mb-2">a mis 55 a&ntilde;os</p>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">&ldquo;La resequedad por menopausia hab&iacute;a hecho la intimidad imposible. En 10 d&iacute;as, todo volvi&oacute; a estar naturalmente lubricado. &iexcl;Mi esposo est&aacute; encantado!&rdquo;</p>
+        <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; B&aacute;rbara S., Monterrey</p>
+      </div>
+      <div class="review-card">
+        <div class="text-gold text-xs mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs font-bold text-forest mb-2">&iexcl;me encanta! &#128525;</p>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">&ldquo;Mi esposo literalmente me pregunt&oacute; si estaba usando perfume de pi&ntilde;a ah&iacute; abajo. Solo me re&iacute; y guard&eacute; mi secreto. El sabor es incre&iacute;ble.&rdquo;</p>
+        <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Catalina K., Guadalajara</p>
+      </div>
+      <div class="review-card">
+        <div class="text-gold text-xs mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs font-bold text-forest mb-2">funciona PERO</p>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">&ldquo;&iquest;Funcionan? S&Iacute;. Resultados incre&iacute;bles en d&iacute;as. Pero $549 por 30 d&iacute;as no es barato. Aunque honestamente vale cada peso por lo que hace.&rdquo;</p>
+        <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Mar&iacute;a O., Puebla</p>
+      </div>
+      <div class="review-card">
+        <div class="text-gold text-xs mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="font-body text-xs font-bold text-forest mb-2">adi&oacute;s antibi&oacute;ticos</p>
+        <p class="font-body text-[11px] text-text-muted leading-relaxed">&ldquo;Tres a&ntilde;os de VB recurrente. Cuatro rondas de metronidazol. Empec&eacute; Florae despu&eacute;s de la &uacute;ltima ronda y llevo 3 meses sin VB por primera vez.&rdquo;</p>
+        <p class="font-body text-xs font-semibold text-forest mt-3">&mdash; Valentina M., Quer&eacute;taro</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 9. US vs THEM COMPARISON                    -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-12 px-4 bg-blush/40">
+  <div class="max-w-md mx-auto">
+    <h2 class="font-display text-2xl text-forest text-center mb-8">La Diferencia Florae</h2>
+
+    <div class="grid grid-cols-2 gap-3 mb-4">
+      <!-- Florae column -->
+      <div>
+        <div class="ph rounded-2xl h-32 mb-3" style="border-radius:16px;">
+          <div><div class="text-2xl mb-1">&#127800;</div><p class="text-[10px]">Foto producto Florae</p></div>
+        </div>
+        <div class="space-y-2">
+          <div class="bg-white rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body shadow-sm">
+            <span class="w-5 h-5 rounded-full bg-forest flex items-center justify-center text-white text-[10px] flex-shrink-0">&#10003;</span>
+            <span class="text-forest font-medium">Sobrevive el &aacute;cido</span>
+          </div>
+          <div class="bg-white rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body shadow-sm">
+            <span class="w-5 h-5 rounded-full bg-forest flex items-center justify-center text-white text-[10px] flex-shrink-0">&#10003;</span>
+            <span class="text-forest font-medium">Ataca la causa ra&iacute;z</span>
+          </div>
+          <div class="bg-white rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body shadow-sm">
+            <span class="w-5 h-5 rounded-full bg-forest flex items-center justify-center text-white text-[10px] flex-shrink-0">&#10003;</span>
+            <span class="text-forest font-medium">Se queda y coloniza</span>
+          </div>
+          <div class="bg-white rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body shadow-sm">
+            <span class="w-5 h-5 rounded-full bg-forest flex items-center justify-center text-white text-[10px] flex-shrink-0">&#10003;</span>
+            <span class="text-forest font-medium">2 gomitas deliciosas</span>
+          </div>
+          <div class="bg-white rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body shadow-sm">
+            <span class="w-5 h-5 rounded-full bg-forest flex items-center justify-center text-white text-[10px] flex-shrink-0">&#10003;</span>
+            <span class="text-forest font-medium">Soluci&oacute;n a largo plazo</span>
+          </div>
+        </div>
+      </div>
+      <!-- Others column -->
+      <div>
+        <div class="rounded-2xl h-32 mb-3 bg-white/50 flex items-center justify-center relative overflow-hidden" style="border-radius:16px;">
+          <div class="text-center p-3">
+            <div class="text-3xl mb-1 opacity-40">&#128138;</div>
+            <p class="text-[10px] text-text-muted">C&aacute;psulas gen&eacute;ricas</p>
+          </div>
+          <!-- X overlay -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg width="60" height="60" class="opacity-20"><line x1="10" y1="10" x2="50" y2="50" stroke="#E85D3A" stroke-width="3"/><line x1="50" y1="10" x2="10" y2="50" stroke="#E85D3A" stroke-width="3"/></svg>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="bg-white/60 rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body">
+            <span class="w-5 h-5 rounded-full bg-coral/20 flex items-center justify-center text-coral text-[10px] flex-shrink-0">&#10007;</span>
+            <span class="text-text-muted">Muere antes de actuar</span>
+          </div>
+          <div class="bg-white/60 rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body">
+            <span class="w-5 h-5 rounded-full bg-coral/20 flex items-center justify-center text-coral text-[10px] flex-shrink-0">&#10007;</span>
+            <span class="text-text-muted">Enmascara s&iacute;ntomas</span>
+          </div>
+          <div class="bg-white/60 rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body">
+            <span class="w-5 h-5 rounded-full bg-coral/20 flex items-center justify-center text-coral text-[10px] flex-shrink-0">&#10007;</span>
+            <span class="text-text-muted">Se elimina r&aacute;pido</span>
+          </div>
+          <div class="bg-white/60 rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body">
+            <span class="w-5 h-5 rounded-full bg-coral/20 flex items-center justify-center text-coral text-[10px] flex-shrink-0">&#10007;</span>
+            <span class="text-text-muted">3&ndash;4 c&aacute;psulas feas</span>
+          </div>
+          <div class="bg-white/60 rounded-full px-3 py-2 flex items-center gap-2 text-xs font-body">
+            <span class="w-5 h-5 rounded-full bg-coral/20 flex items-center justify-center text-coral text-[10px] flex-shrink-0">&#10007;</span>
+            <span class="text-text-muted">Alivio temporal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <a href="index.html#buy-box" class="cta-gold mb-2">Reclamar Oferta Especial &rarr;</a>
+      <p class="font-body text-xs text-text-muted text-center flex items-center justify-center gap-1.5">
+        <span class="text-coral">&#9825;</span> M&aacute;s de 12,000 Packs Vendidos
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 10. FAQS                                    -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-12 px-4 bg-soft-bg">
+  <div class="max-w-md mx-auto">
+    <h2 class="font-display text-2xl text-forest text-center mb-8">Preguntas Frecuentes</h2>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">&iquest;Cu&aacute;nto tardar&eacute; en ver resultados? <span class="faq-icon">+</span></div>
+      <div class="faq-a">La mayor&iacute;a de las mujeres notan mejora en frescura y comodidad en 2&ndash;3 semanas. La recolonizaci&oacute;n completa de flora vaginal t&iacute;picamente toma 4&ndash;8 semanas de uso diario.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">&iquest;Puedo tomarlas con otros suplementos? <span class="faq-icon">+</span></div>
+      <div class="faq-a">S&iacute;. Son seguras junto con otros suplementos. Si est&aacute;s tomando antibi&oacute;ticos, empieza las gomitas justo despu&eacute;s de terminar tu tratamiento. Siempre consulta a tu profesional de salud.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">&iquest;Debo usarlas si no tengo problemas? <span class="faq-icon">+</span></div>
+      <div class="faq-a">S&iacute; &mdash; muchas mujeres las usan preventivamente para mantener el pH &oacute;ptimo. La colonia de Lactobacillus que construyes act&uacute;a como defensa continua, especialmente despu&eacute;s de antibi&oacute;ticos o cambios hormonales.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">&iquest;Son veganas y sin gluten? <span class="faq-icon">+</span></div>
+      <div class="faq-a">S&iacute;. 100% veganas (pectina de fruta), sin gluten, sin az&uacute;car (fruto del monje). Sin colorantes ni saborizantes artificiales. Fabricadas en instalaci&oacute;n certificada GMP.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">&iquest;Hay efectos secundarios? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Los probi&oacute;ticos generalmente son bien tolerados. Algunas mujeres experimentan ajuste digestivo leve los primeros d&iacute;as que se resuelve r&aacute;pidamente. Estas declaraciones no han sido evaluadas por la COFEPRIS.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">&iquest;Se puede usar durante el embarazo? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Recomendamos consultar a tu ginec&oacute;logo/a antes de tomar cualquier suplemento nuevo durante el embarazo o lactancia.</div>
+    </div>
+
+    <div class="mt-8">
+      <a href="index.html#buy-box" class="cta-gold mb-2">Reclamar Oferta Especial &rarr;</a>
+      <p class="font-body text-xs text-text-muted text-center flex items-center justify-center gap-1.5">
+        <span class="text-coral">&#9825;</span> M&aacute;s de 12,000 Packs Vendidos
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 11. TRUST BADGES                            -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-8 px-4 bg-white">
+  <div class="max-w-lg mx-auto">
+    <div class="trust-scroll">
+      <div class="flex-shrink-0 w-60 text-center p-4 snap-start">
+        <div class="w-12 h-12 mx-auto rounded-full border-2 border-forest flex items-center justify-center text-xl mb-3">&#128666;</div>
+        <h3 class="font-body font-bold text-forest text-sm mb-1">Env&iacute;o Seguro y R&aacute;pido</h3>
+        <p class="font-body text-[11px] text-text-muted">Recibe tu pedido protegido con rastreo incluido</p>
+      </div>
+      <div class="flex-shrink-0 w-60 text-center p-4 snap-start">
+        <div class="w-12 h-12 mx-auto rounded-full border-2 border-forest flex items-center justify-center text-xl mb-3">&#9989;</div>
+        <h3 class="font-body font-bold text-forest text-sm mb-1">Calidad Garantizada</h3>
+        <p class="font-body text-[11px] text-text-muted">Bueno para ti, bueno para el planeta</p>
+      </div>
+      <div class="flex-shrink-0 w-60 text-center p-4 snap-start">
+        <div class="w-12 h-12 mx-auto rounded-full border-2 border-forest flex items-center justify-center text-xl mb-3">&#128149;</div>
+        <h3 class="font-body font-bold text-forest text-sm mb-1">Satisfacci&oacute;n del Cliente</h3>
+        <p class="font-body text-[11px] text-text-muted">Tu felicidad es nuestra prioridad</p>
+      </div>
+      <div class="flex-shrink-0 w-60 text-center p-4 snap-start">
+        <div class="w-12 h-12 mx-auto rounded-full border-2 border-forest flex items-center justify-center text-xl mb-3">&#128274;</div>
+        <h3 class="font-body font-bold text-forest text-sm mb-1">Compra Segura</h3>
+        <p class="font-body text-[11px] text-text-muted">Compra con total confianza</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 12. MARQUEE TICKER                          -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-3 bg-forest overflow-hidden">
+  <div class="marquee-track">
+    <span class="font-body text-cream text-xs font-semibold whitespace-nowrap px-6 tracking-wider uppercase">Cada producto es cuidadosamente seleccionado &mdash; <a href="index.html#buy-box" class="underline underline-offset-2">Comprar ahora</a></span>
+    <span class="font-body text-cream/60 text-xs whitespace-nowrap px-6 tracking-wider uppercase">Compromiso con la excelencia</span>
+    <span class="font-body text-cream text-xs font-semibold whitespace-nowrap px-6 tracking-wider uppercase">Cada producto es cuidadosamente seleccionado &mdash; <a href="index.html#buy-box" class="underline underline-offset-2">Comprar ahora</a></span>
+    <span class="font-body text-cream/60 text-xs whitespace-nowrap px-6 tracking-wider uppercase">Compromiso con la excelencia</span>
+    <span class="font-body text-cream text-xs font-semibold whitespace-nowrap px-6 tracking-wider uppercase">Cada producto es cuidadosamente seleccionado &mdash; <a href="index.html#buy-box" class="underline underline-offset-2">Comprar ahora</a></span>
+    <span class="font-body text-cream/60 text-xs whitespace-nowrap px-6 tracking-wider uppercase">Compromiso con la excelencia</span>
+    <span class="font-body text-cream text-xs font-semibold whitespace-nowrap px-6 tracking-wider uppercase">Cada producto es cuidadosamente seleccionado &mdash; <a href="index.html#buy-box" class="underline underline-offset-2">Comprar ahora</a></span>
+    <span class="font-body text-cream/60 text-xs whitespace-nowrap px-6 tracking-wider uppercase">Compromiso con la excelencia</span>
+    <span class="font-body text-cream text-xs font-semibold whitespace-nowrap px-6 tracking-wider uppercase">Cada producto es cuidadosamente seleccionado &mdash; <a href="index.html#buy-box" class="underline underline-offset-2">Comprar ahora</a></span>
+    <span class="font-body text-cream/60 text-xs whitespace-nowrap px-6 tracking-wider uppercase">Compromiso con la excelencia</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 13. NEWSLETTER                              -->
+<!-- ════════════════════════════════════════════ -->
+<section class="py-12 px-4 bg-soft-bg">
+  <div class="max-w-sm mx-auto text-center">
+    <h2 class="font-display text-2xl text-forest mb-2">&iquest;Quieres probar nuestros<br />nuevos productos?</h2>
+    <p class="font-body text-sm text-text-muted mb-6">S&eacute; la primera en conocer nuevas colecciones y ofertas exclusivas.</p>
+    <form class="flex gap-2" onsubmit="return false;">
+      <input type="email" placeholder="tu@email.com" class="flex-1 rounded-full px-4 py-3 font-body text-sm text-forest bg-white border border-blush/40 outline-none focus:ring-2 focus:ring-gold/40" />
+      <button type="submit" class="bg-forest text-cream font-body font-semibold text-sm px-5 py-3 rounded-full hover:bg-forest-hover transition-colors flex-shrink-0">
+        &rarr;
+      </button>
+    </form>
+    <p class="font-body text-[10px] text-text-muted/60 mt-3">* Prometemos no usar tu correo para spam. Puedes darte de baja en cualquier momento.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 14. FOOTER                                  -->
+<!-- ════════════════════════════════════════════ -->
+<footer class="bg-white border-t border-blush/30">
+  <div class="max-w-7xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <div class="font-display text-forest font-bold tracking-[0.12em] text-sm uppercase mb-3">Florae</div>
+        <p class="font-body text-xs text-text-muted leading-relaxed mb-4">Suplementos premium de bienestar femenino. Cepas probi&oacute;ticas cl&iacute;nicamente estudiadas para salud vaginal duradera.</p>
+        <a href="index.html#buy-box" class="inline-block bg-forest text-cream font-body font-semibold text-xs px-4 py-2.5 rounded-lg hover:bg-forest-hover transition-colors uppercase tracking-wider">Comprar Ahora</a>
+      </div>
+      <div>
+        <p class="font-body text-xs font-bold text-forest uppercase tracking-wider mb-4">Informaci&oacute;n</p>
+        <ul class="space-y-2">
+          <li><a href="index.html#full-faq" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Preguntas Frecuentes</a></li>
+          <li><a href="envios.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Pol&iacute;tica de Env&iacute;os</a></li>
+          <li><a href="devoluciones.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Devoluciones</a></li>
+          <li><a href="terminos.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">T&eacute;rminos de Servicio</a></li>
+          <li><a href="privacidad.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Pol&iacute;tica de Privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-body text-xs font-bold text-forest uppercase tracking-wider mb-4">Tienda</p>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Comprar</a></li>
+          <li><a href="index.html#all-reviews" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Rese&ntilde;as</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-body text-xs font-bold text-forest uppercase tracking-wider mb-4">Contacto</p>
+        <ul class="space-y-2">
+          <li><a href="contacto.html" class="font-body text-xs text-text-muted hover:text-forest transition-colors">Cont&aacute;ctanos</a></li>
+          <li><span class="font-body text-xs text-text-muted">hola@florae.mx</span></li>
+          <li><span class="font-body text-xs text-text-muted">Lun&ndash;Vie &middot; 9am&ndash;6pm CST</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-blush/20 max-w-7xl mx-auto px-4 py-4">
+    <p class="font-body text-[9px] text-text-muted/50 leading-relaxed text-center mb-2">
+      *Estas declaraciones no han sido evaluadas por la COFEPRIS. Este producto no est&aacute; destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Los resultados pueden variar.
+    </p>
+    <p class="font-body text-xs text-text-muted text-center">&copy; 2026 Florae. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- JAVASCRIPT                                  -->
+<!-- ════════════════════════════════════════════ -->
+<script>
+  // Announcement rotation
+  (function() {
+    var msgs = document.querySelectorAll('.announcement-msg');
+    var current = 0;
+    setInterval(function() {
+      msgs[current].classList.remove('active');
+      current = (current + 1) % msgs.length;
+      msgs[current].classList.add('active');
+    }, 4000);
+  })();
+
+  // Countdown timer
+  function updateTimer() {
+    var now = new Date();
+    var midnight = new Date(now);
+    midnight.setHours(23, 59, 59, 999);
+    var diff = midnight - now;
+    var hrs = Math.floor(diff / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    var secs = Math.floor((diff % 60000) / 1000);
+    function pad(n) { return String(n).padStart(2, '0'); }
+    var h = document.getElementById('t-hrs');
+    var m = document.getElementById('t-min');
+    var s = document.getElementById('t-sec');
+    if (h) h.textContent = pad(hrs);
+    if (m) m.textContent = pad(mins);
+    if (s) s.textContent = pad(secs);
+  }
+  updateTimer();
+  setInterval(updateTimer, 1000);
+
+  // FAQ toggles
+  function toggleFaq(item) {
+    var answer = item.querySelector('.faq-a');
+    var icon = item.querySelector('.faq-icon');
+    var isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-a.open').forEach(function(el) {
+      el.classList.remove('open');
+      var ic = el.parentElement.querySelector('.faq-icon');
+      if (ic) ic.classList.remove('rotated');
+    });
+    if (!isOpen) {
+      answer.classList.add('open');
+      if (icon) icon.classList.add('rotated');
+    }
+  }
+</script>
+
+</body>
+</html>
